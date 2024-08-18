@@ -1,22 +1,491 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fundamentos de programación orientada a eventos</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
-<head>
-  <title> Programacion orientada a eventos </title>
-  <link type="text/css" rel="stylesheet" media="all" href="./dist/styles/h5p.css" />
-  <meta charset="utf-8" />
-  <script type="text/javascript" src="./dist/main.bundle.js"></script>
-</head>
+    <!-- Favicons -->
+    <link href="assets/img/program.png" rel="program" />
+    <link href="assets/img/program.png" rel="program" />
 
-<div id="h5p-container-1"></div>
-<br/>
-<span>Siguiente</span>
-<div id="h5p-container-2"></div>
-<span>Final</span>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-<script type="text/javascript" src = "./js/ejemplo.js">  </script>
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
 
-</body>
+    <!-- =======================================================
+  * Template Name: Mentor
+  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
 
+  <body class="index-page">
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center"
+      >
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1 class="sitename">Univalle</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li>
+              <a href="index.html" class="active">Home<br /></a>
+            </li>
+            <li class="dropdown">
+              <a href="#"
+                ><span>Clases</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li><a href="clase1.html">Clase 1</a></li>
+                <li><a href="#">Clase 2</a></li>
+                <li><a href="#">Clase 3</a></li>
+                <li><a href="#">Clase 4</a></li>
+                <li><a href="#">Clase 5</a></li>
+                <li><a href="#">Clase 6</a></li>
+                <li><a href="#">Clase 7</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section dark-background">
+        <img src="assets/img/hero-bg.png" alt="" data-aos="fade-in" />
+
+        <div class="container">
+          <h2 data-aos="fade-up" data-aos-delay="100">
+            Fundamentos de programación<br />orientada en eventos
+          </h2>
+          <p data-aos="fade-up" data-aos-delay="200">
+            Implementación de aprendizaje activo
+          </p>
+          <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+            <a
+              href="https://drive.google.com/file/d/1uoIyX8w6YzpK0BuBuX_E6ZyrUY4vknDh/view"
+              target="_blank"
+              class="btn-get-started"
+              >Ver programación académica</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- /Hero Section -->
+
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-6 order-1 order-lg-2"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img src="assets/img/about.png" class="img-fluid" alt="" />
+            </div>
+
+            <div
+              class="col-lg-6 order-2 order-lg-1 content"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3>Aprendizaje activo</h3>
+              <p class="fst-italic">
+                El aprendizaje activo es un enfoque educativo que involucra a
+                los estudiantes de manera activa en el proceso de aprendizaje
+                mediante la participación en discusiones, resolución de
+                problemas y actividades prácticas. Este método fomenta una
+                comprensión más profunda y duradera al permitir que los
+                estudiantes apliquen, experimenten y reflexionen sobre los
+                conceptos en tiempo real.
+              </p>
+              <ul>
+                <li>
+                  <i class="bi bi-check-circle"></i>
+                  <span
+                    >Participación Activa: Los estudiantes interactúan de manera
+                    activa a través de discusiones y actividades prácticas en
+                    lugar de solo escuchar pasivamente.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check-circle"></i>
+                  <span
+                    >Aplicación y Experimentación: Fomenta la práctica y el uso
+                    de conceptos en situaciones reales o simuladas para una
+                    mejor comprensión.
+                  </span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle"></i>
+                  <span
+                    >Retroalimentación y Reflexión: Incluye recibir comentarios
+                    y reflexionar sobre el aprendizaje para ajustar enfoques y
+                    mejorar habilidades</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check-circle"></i>
+                  <span
+                    >Colaboración y Trabajo en Equipo: Los estudiantes trabajan
+                    juntos en grupos para resolver problemas, compartir ideas y
+                    construir conocimientos de manera colectiva, lo que
+                    enriquece el proceso de aprendizaje a través de la
+                    interacción y el intercambio de perspectivas.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check-circle"></i>
+                  <span
+                    >Autonomía y Toma de Decisiones: Los estudiantes tienen la
+                    oportunidad de tomar decisiones sobre cómo abordar problemas
+                    y explorar temas, lo que fomenta la responsabilidad y el
+                    pensamiento independiente en su proceso de
+                    aprendizaje.</span
+                  >
+                </li>
+              </ul>
+              <a
+                href="https://www.unir.net/educacion/revista/hacia-una-deficion-de-aprendizaje-activo/"
+                class="read-more"
+                target="_blank"
+                ><span>Aprender más</span><i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
+
+      <!-- Counts Section -->
+      <section id="counts" class="section counts light-background">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="50"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>De cada 100 mejoran la retentiva</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="60"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>De cada 100 mejoran su desempeño</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="80"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>De cada 100 se sienten más satisfechos con la enseñanza</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="80"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>De cada 100 participan más en clase</p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Counts Section -->
+
+      <!-- Why Us Section -->
+      <section id="why-us" class="section why-us">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="why-box">
+                <h3>Formas de aprendizaje activo</h3>
+                <p>
+                  El aprendizaje activo es una metodología educativa que
+                  transforma la forma en que los estudiantes interactúan con el
+                  contenido académico, promoviendo una participación más
+                  dinámica y comprometida en el proceso de aprendizaje. A
+                  diferencia de los métodos tradicionales de enseñanza, que
+                  suelen basarse en la transmisión unidireccional de información
+                  del instructor al estudiante, el aprendizaje activo pone
+                  énfasis en la participación directa del estudiante a través de
+                  actividades prácticas, colaborativas y reflexivas.
+                </p>
+                <div class="text-center">
+                  <a
+                    href="https://www.youtube.com/watch?v=oMPQNOD-2fo"
+                    target="_blank"
+                    class="more-btn"
+                    ><span>Aprender más</span>
+                    <i class="bi bi-chevron-right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- End Why Box -->
+
+            <div class="col-lg-8 d-flex align-items-stretch">
+              <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-xl-4">
+                  <div
+                    class="icon-box d-flex flex-column justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-camera-video"></i>
+                    <h4>Aula invertida</h4>
+                    <p>
+                      El aula invertida es un método donde los estudiantes
+                      estudian el contenido en casa mediante videos y lecturas,
+                      y utilizan el tiempo en clase para aplicar, discutir y
+                      profundizar en ese conocimiento.
+                    </p>
+                  </div>
+                </div>
+                <!-- End Icon Box -->
+
+                <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+                  <div
+                    class="icon-box d-flex flex-column justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-book"></i>
+                    <h4>El ABP</h4>
+                    <p>
+                      El aprendizaje basado en problemas (ABP) implica que los
+                      estudiantes resuelvan problemas reales para aprender. Este
+                      enfoque fomenta la investigación activa y el desarrollo de
+                      habilidades críticas
+                    </p>
+                  </div>
+                </div>
+                <!-- End Icon Box -->
+
+                <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
+                  <div
+                    class="icon-box d-flex flex-column justify-content-center align-items-center"
+                  >
+                    <i class="bi bi-person"></i>
+                    <h4>Aprendizaje Colaborativo</h4>
+                    <p>
+                      En el aprendizaje colaborativo los estudiantes trabajan en
+                      grupos para investigar, discutir y resolver problemas,
+                      promoviendo la cooperación y el intercambio de ideas.
+                    </p>
+                  </div>
+                </div>
+                <!-- End Icon Box -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Why Us Section -->
+
+      <!-- Trainers Index Section -->
+      <section id="trainers-index" class="section trainers-index">
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-lg-4 col-md-6 d-flex"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="member">
+                <img
+                  src="assets/img/trainers/joshua.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-content">
+                  <h4>Joshua Triana</h4>
+                  <span>Senior fullstack developer</span>
+                  <p>
+                    Desarrollador con experiencia en desarrollo web.
+                    <br />Profesor hora catedra de la universidad del Valle sede
+                    Tuluá
+                  </p>
+                  <div class="social">
+                    <a href="mailto:joshua.triana@correounivalle.edu.co">
+                      <i class="bi bi-envelope"></i
+                    ></a>
+                    <a href="https://www.linkedin.com/in/joshua-triana/">
+                      <i class="bi bi-linkedin"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-lg-4 col-md-6 d-flex"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="member">
+                <img
+                  src="assets/img/trainers/cardel.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-content">
+                  <h4>Carlos Delgado</h4>
+                  <span>Estudiante doctorado en computación</span>
+                  <p>
+                    Estudiande de doctorado trabajando en pruebas de software
+                    con IA. <br />Profesor hora catedra de la universidad del
+                    Valle sede Tuluá
+                  </p>
+                  <div class="social">
+                    <a href="mailto:carlos.delgado@correounivalle.edu.co">
+                      <i class="bi bi-envelope"></i
+                    ></a>
+                    <a href="https://www.linkedin.com/in/cardel/">
+                      <i class="bi bi-linkedin"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-lg-4 col-md-6 d-flex"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="member">
+                <img
+                  src="assets/img/trainers/diana.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <div class="member-content">
+                  <h4>Diana Margarita Díaz</h4>
+                  <span
+                    >Directora del departamento de idiomas - Universidad
+                    ICESI</span
+                  >
+                  <p>
+                    Directora de departamento de idiomas, profesora nombrada.
+                    <br />Directora y supervisa de esta investigación
+                  </p>
+                  <div class="social">
+                    <a href="mailto:dmdiaz@icesi.edu.co">
+                      <i class="bi bi-envelope"></i
+                    ></a>
+                    <a
+                      href="https://www.linkedin.com/in/diana-margarita-diaz-2a14a82a2/"
+                    >
+                      <i class="bi bi-linkedin"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Team Member -->
+          </div>
+        </div>
+      </section>
+      <!-- /Trainers Index Section -->
+    </main>
+
+    <footer id="footer" class="footer position-relative light-background">
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">Universidad ICESI</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by Joshua Triana, Carlos Delgado, Diana Diaz
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
