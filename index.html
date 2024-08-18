@@ -2,20 +2,32 @@
 <html>
 
 <head>
-  <title> H5P Standalone on GitHub Pages </title>
+  <title> Programacion orientada a eventos </title>
   <link type="text/css" rel="stylesheet" media="all" href="./dist/styles/h5p.css" />
   <meta charset="utf-8" />
   <script type="text/javascript" src="./dist/main.bundle.js"></script>
 </head>
 
 <body>
-  <div id="h5p-container"></div>
+  <div id="h5p-project1"></div>
   <script type="text/javascript">
     const {
-      H5P
+      project1
     } = H5PStandalone;
-    new H5P(document.getElementById('h5p-container'), {
-      h5pJsonPath: 'h5p-folder',
+    new H5P(document.getElementById('h5p-project1'), {
+      h5pJsonPath: 'recursos/h5p/project1',
+      frameJs: './dist/frame.bundle.js',
+      frameCss: './dist/styles/h5p.css'
+    });
+  </script>
+
+  <div id="h5p-project2"></div>
+  <script type="text/javascript">
+    const {
+      project2
+    } = H5PStandalone;
+    new H5P(document.getElementById('h5p-project2'), {
+      h5pJsonPath: 'recursos/h5p/project2',
       frameJs: './dist/frame.bundle.js',
       frameCss: './dist/styles/h5p.css'
     });
