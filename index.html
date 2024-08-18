@@ -8,31 +8,36 @@
   <script type="text/javascript" src="./dist/main.bundle.js"></script>
 </head>
 
-<body>
-  <div id="h5p-project1"></div>
-  <script type="text/javascript">
-    const {
-      project1
-    } = H5PStandalone;
-    await new H5P(document.getElementById('h5p-project1'), {
-      h5pJsonPath: 'recursos/h5p/project1',
-      frameJs: './dist/frame.bundle.js',
-      frameCss: './dist/styles/h5p.css'
-    });
-  </script>
+<div id="h5p-container-1"></div>
+<br/>
+<span>Siguiente</span>
+<div id="h5p-container-2"></div>
+<span>Final</span>
 
-  <div id="h5p-project2"></div>
-  <script type="text/javascript">
-    const {
-      project2
-    } = H5PStandalone;
-    await new H5P(document.getElementById('h5p-project2'), {
-      h5pJsonPath: 'recursos/h5p/project2',
-      frameJs: './dist/frame.bundle.js',
-      frameCss: './dist/styles/h5p.css'
-    });
-  </script>
-  <h2>Fin</h2>
+<script type="text/javascript">
+  const {
+    H5P
+  } = H5PStandalone;
+
+  async function setup() {
+    await new H5P(document.getElementById('h5p-container-1'),
+            {
+              h5pJsonPath: 'recursos/h5p/project1',
+              frameJs: '/dist/frame.bundle.js',
+              frameCss: '/dist/styles/h5p.css'
+            });
+
+    await new H5P(document.getElementById('h5p-container-2'),
+            {
+              h5pJsonPath: 'recursos/h5p/project2',
+              frameJs: '/dist/frame.bundle.js',
+              frameCss: '/dist/styles/h5p.css'
+            });
+  }
+
+  setup();
+</script>
+
 </body>
 
 </html>
