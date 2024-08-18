@@ -1,1 +1,1 @@
-import { H5P } from './js/h5p.js';
+import { H5P } from './h5p';
