@@ -14,7 +14,7 @@
     const {
       project1
     } = H5PStandalone;
-    new H5P(document.getElementById('h5p-project1'), {
+    await new H5P(document.getElementById('h5p-project1'), {
       h5pJsonPath: 'recursos/h5p/project1',
       frameJs: './dist/frame.bundle.js',
       frameCss: './dist/styles/h5p.css'
@@ -26,7 +26,7 @@
     const {
       project2
     } = H5PStandalone;
-    new H5P(document.getElementById('h5p-project2'), {
+    await new H5P(document.getElementById('h5p-project2'), {
       h5pJsonPath: 'recursos/h5p/project2',
       frameJs: './dist/frame.bundle.js',
       frameCss: './dist/styles/h5p.css'
