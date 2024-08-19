@@ -2396,9 +2396,11 @@
                         1 < c && we(f),
                         1 < c &&
                           be(
-                            e.slice(0, c - 1).concat({
-                              value: " " === e[c - 2].type ? "*" : "",
-                            })
+                            e
+                              .slice(0, c - 1)
+                              .concat({
+                                value: " " === e[c - 2].type ? "*" : "",
+                              })
                           ).replace(U, "$1"),
                         n,
                         c < i && Te(e.slice(c, i)),
@@ -8893,8 +8895,8 @@
                     n.setAttribute("scrolling", "no"),
                     n.setAttribute("data-content-id", "".concat(this.id)),
                     n.setAttribute("frameBorder", 0),
-                    (n.style.width = "50%"),
-                    (n.style.height = "50%"),
+                    (n.style.width = "100%"),
+                    (n.style.height = "100%"),
                     (n.style.border = "none"),
                     (n.style.display = "block"),
                     t.append(n),
