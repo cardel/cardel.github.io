@@ -7,7 +7,7 @@ async function setup() {
     frameCss: "/dist/styles/h5p.css",
     embed: true,
     embedCode:
-      '<iframe width=":w" height=":h" src="https://www.youtube.com/watch?v=wXhH4BjuKI8" frameBorder="0" scrolling="no" style="width:50%"></iframe>',
+      '<iframe width=":w" height=":h" src="http://www.youtube.com/watch?v=wXhH4BjuKI8" frameBorder="0" scrolling="no" style="width:50%"></iframe>',
   });
 }
 
