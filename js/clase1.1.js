@@ -5,6 +5,7 @@ async function setup() {
     h5pJsonPath: "recursos/h5p/clase1.1",
     frameJs: "/dist/frame.bundle.js",
     frameCss: "/dist/styles/h5p.css",
+    embed: true,
     embedCode:
       '<iframe width=":w" height=":h" src="https://www.youtube.com/watch?v=wXhH4BjuKI8" frameBorder="0" scrolling="no" style="width:50%"></iframe>',
   });
