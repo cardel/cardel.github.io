@@ -1,3 +1,5 @@
+const { H5P } = H5PStandalone;
+
 document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.querySelectorAll('.nav-link');
   tabs.forEach(tab => {
