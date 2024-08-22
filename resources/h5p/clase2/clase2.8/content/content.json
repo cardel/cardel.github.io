@@ -16,7 +16,7 @@
          },
          "files":[
             {
-               "path":"https:\/\/youtu.be\/egH5XfSC6FE?si=0YpXkxzl8QoXcKxw",
+               "path":"https:\/\/youtu.be\/waRECLLKDCg?si=WzoBkKMveSN8e3LJ",
                "mime":"video\/YouTube",
                "copyright":{
                   "license":"U"
@@ -32,29 +32,29 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 137,  
-            "to": 147
+            "from": 158,  // After the first 10 seconds of the second half of the video
+            "to": 168
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Cuál es el valor por defecto de un arreglo de bytes en Java?",
+              "question": "¿Qué comando se utiliza para crear una nueva rama en Git?",
               "answers": [
                 {
-                  "text": "0",
+                  "text": "git branch",
+                  "correct": false
+                },
+                {
+                  "text": "git checkout -b",
                   "correct": true
                 },
                 {
-                  "text": "1",
+                  "text": "git merge",
                   "correct": false
                 },
                 {
-                  "text": "null",
-                  "correct": false
-                },
-                {
-                  "text": "undefined",
+                  "text": "git commit",
                   "correct": false
                 }
               ]
@@ -82,29 +82,29 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 342,  
-            "to": 352
+            "from": 392,  // 10 seconds before the video ends
+            "to": 402
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Qué método de iteración se utiliza comúnmente para recorrer arreglos?",
+              "question": "¿Cuál es el propósito de utilizar ramas en proyectos de desarrollo con Git?",
               "answers": [
                 {
-                  "text": "for",
+                  "text": "Para fusionar cambios inmediatamente al main.",
+                  "correct": false
+                },
+                {
+                  "text": "Para mantener cambios aislados hasta que estén listos para unirse al main.",
                   "correct": true
                 },
                 {
-                  "text": "while",
+                  "text": "Para eliminar características antiguas del proyecto.",
                   "correct": false
                 },
                 {
-                  "text": "foreach",
-                  "correct": false
-                },
-                {
-                  "text": "map",
+                  "text": "Para cambiar la configuración del proyecto.",
                   "correct": false
                 }
               ]
