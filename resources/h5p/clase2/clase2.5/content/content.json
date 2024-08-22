@@ -32,7 +32,7 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 253,  // After the first 10 seconds of the second half of the video
+            "from": 253,  
             "to": 263
           },
           "libraryTitle": "Multiple Choice",
