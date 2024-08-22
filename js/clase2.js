@@ -22,8 +22,8 @@ function loadH5PContent(tab) {
 
   if (!container.classList.contains('h5p-loaded')) {
       new H5P(container, {
-          h5pJsonPath: `recursos/h5p/clase2.${index}`,
-          frameJs: "/dist/frame.bundle.js",
+        h5pJsonPath: `resources/h5p/clase2/clase2.${index}`,
+        frameJs: "/dist/frame.bundle.js",
           frameCss: "/dist/styles/h5p.css",
       }).then(() => {
           container.classList.add('h5p-loaded'); // Mark it as loaded
