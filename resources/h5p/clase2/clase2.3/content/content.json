@@ -2,7 +2,7 @@
    "interactiveVideo":{
       "video":{
          "startScreenOptions":{
-            "title":"V\u00eddeo Interactivo",
+            "title":"Configurar GIT",
             "hideStartTitle":false
          },
          "textTracks":{
@@ -16,7 +16,7 @@
          },
          "files":[
             {
-               "path":"https:\/\/youtu.be\/7zzfixRVMn0?si=kihxetgctf35J9j-",
+               "path":"https:\/\/youtu.be\/nS2cCXVmdRA?si=8ggOmHyVJUDkKG5R",
                "mime":"video\/YouTube",
                "copyright":{
                   "license":"U"
@@ -32,34 +32,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 208,
-            "to": 218
+            "from": 226,  // After the first 10 seconds of the second half of the video
+            "to": 236
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Cuál es el principal beneficio de utilizar repositorios en GitHub según el video?",
+              "question": "¿Qué función tiene el botón verde que aparece en la interfaz de GitHub descrita en el video?",
               "answers": [
                 {
-                  "text": "Permite ejecutar código de manera más rápida.",
+                  "text": "Inicia un nuevo proyecto.",
                   "correct": false
                 },
                 {
-                  "text": "Facilita la gestión de versiones y evita la duplicación de archivos.",
+                  "text": "Descarga el proyecto en la máquina local.",
                   "correct": true
                 },
                 {
-                  "text": "Incrementa la seguridad del código fuente.",
+                  "text": "Sube cambios al repositorio en línea.",
                   "correct": false
                 },
                 {
-                  "text": "Permite el trabajo offline sin necesidad de internet.",
+                  "text": "Cambia la configuración del proyecto.",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         },
         {
           "x": 0,
@@ -67,34 +82,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 407,
-            "to": 417
+            "from": 442,  // 10 seconds before the video ends
+            "to": 452
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Qué permite especificar la opción de visibilidad de un repositorio en GitHub?",
+              "question": "¿Qué se recomienda hacer al configurar el SSH en GitHub según el video?",
               "answers": [
                 {
-                  "text": "Determina si el repositorio puede ejecutar código automáticamente.",
+                  "text": "Crear una contraseña compleja para mayor seguridad.",
                   "correct": false
                 },
                 {
-                  "text": "Controla quién puede ver y contribuir al repositorio.",
+                  "text": "Instalar el software adecuado en todas las máquinas que se utilizan.",
+                  "correct": false
+                },
+                {
+                  "text": "Usar una llave SSH por cada computadora para gestionar los accesos.",
                   "correct": true
                 },
                 {
-                  "text": "Establece si el repositorio es compatible con múltiples lenguajes de programación.",
-                  "correct": false
-                },
-                {
-                  "text": "Decide la frecuencia con la que el repositorio se actualiza automáticamente.",
+                  "text": "Actualizar la versión de git regularmente.",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         }
       ]
     },

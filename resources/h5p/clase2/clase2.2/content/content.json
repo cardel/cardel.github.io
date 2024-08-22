@@ -2,7 +2,7 @@
    "interactiveVideo":{
       "video":{
          "startScreenOptions":{
-            "title":"V\u00eddeo Interactivo",
+            "title":"Tutorial de GitHub",
             "hideStartTitle":false
          },
          "textTracks":{
@@ -16,7 +16,7 @@
          },
          "files":[
             {
-               "path":"https:\/\/youtu.be\/7zzfixRVMn0?si=kihxetgctf35J9j-",
+               "path":"https:\/\/youtu.be\/2pMshqMIyow?si=4D1sL1lOKypcWheg",
                "mime":"video\/YouTube",
                "copyright":{
                   "license":"U"
@@ -32,29 +32,29 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 208,
-            "to": 218
+            "from": 111,  // After the first 10 seconds of the second half of the video
+            "to": 121
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Cuál es el principal beneficio de utilizar repositorios en GitHub según el video?",
+              "question": "¿Qué permite hacer un repositorio en GitHub según el video?",
               "answers": [
                 {
-                  "text": "Permite ejecutar código de manera más rápida.",
+                  "text": "Permite descargar y subir videos de forma directa.",
                   "correct": false
                 },
                 {
-                  "text": "Facilita la gestión de versiones y evita la duplicación de archivos.",
+                  "text": "Sirve exclusivamente para almacenar archivos grandes.",
+                  "correct": false
+                },
+                {
+                  "text": "Facilita compartir proyectos con la comunidad mediante enlaces.",
                   "correct": true
                 },
                 {
-                  "text": "Incrementa la seguridad del código fuente.",
-                  "correct": false
-                },
-                {
-                  "text": "Permite el trabajo offline sin necesidad de internet.",
+                  "text": "Ofrece una plataforma para realizar videoconferencias.",
                   "correct": false
                 }
               ]
@@ -67,34 +67,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 407,
-            "to": 417
+            "from": 213,  // 10 seconds before the video ends
+            "to": 223
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Qué permite especificar la opción de visibilidad de un repositorio en GitHub?",
+              "question": "Según el video, ¿cuál es un uso común de los repositorios en entornos profesionales?",
               "answers": [
                 {
-                  "text": "Determina si el repositorio puede ejecutar código automáticamente.",
+                  "text": "Para gestionar la nómina y recursos humanos.",
                   "correct": false
                 },
                 {
-                  "text": "Controla quién puede ver y contribuir al repositorio.",
+                  "text": "Para almacenar y gestionar código en proyectos colaborativos.",
                   "correct": true
                 },
                 {
-                  "text": "Establece si el repositorio es compatible con múltiples lenguajes de programación.",
+                  "text": "Exclusivamente para proyectos de software libre.",
                   "correct": false
                 },
                 {
-                  "text": "Decide la frecuencia con la que el repositorio se actualiza automáticamente.",
+                  "text": "Solo se utilizan en contextos educativos.",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         }
       ]
     },

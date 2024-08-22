@@ -2,7 +2,7 @@
    "interactiveVideo":{
       "video":{
          "startScreenOptions":{
-            "title":"V\u00eddeo Interactivo",
+            "title":"Conectarnos a GIT",
             "hideStartTitle":false
          },
          "textTracks":{
@@ -16,7 +16,7 @@
          },
          "files":[
             {
-               "path":"https:\/\/youtu.be\/7zzfixRVMn0?si=kihxetgctf35J9j-",
+               "path":"https:\/\/youtu.be\/3VrCCvgfaL8?si=3O067OL22E9f0wWZ",
                "mime":"video\/YouTube",
                "copyright":{
                   "license":"U"
@@ -32,34 +32,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 208,
-            "to": 218
+            "from": 347,  // After the first 10 seconds of the second half of the video
+            "to": 357
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Cuál es el principal beneficio de utilizar repositorios en GitHub según el video?",
+              "question": "¿Cuál es el propósito de la carpeta oculta .git mencionada en el video?",
               "answers": [
                 {
-                  "text": "Permite ejecutar código de manera más rápida.",
+                  "text": "Contiene configuraciones de usuario de Git.",
                   "correct": false
                 },
                 {
-                  "text": "Facilita la gestión de versiones y evita la duplicación de archivos.",
+                  "text": "Almacena la información de versionado del repositorio.",
                   "correct": true
                 },
                 {
-                  "text": "Incrementa la seguridad del código fuente.",
+                  "text": "Guarda copias de seguridad del código.",
                   "correct": false
                 },
                 {
-                  "text": "Permite el trabajo offline sin necesidad de internet.",
+                  "text": "Optimiza el rendimiento del sistema Git.",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         },
         {
           "x": 0,
@@ -67,34 +82,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 407,
-            "to": 417
+            "from": 684,  // 10 seconds before the video ends
+            "to": 694
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Qué permite especificar la opción de visibilidad de un repositorio en GitHub?",
+              "question": "¿Qué comando se utiliza para conectar un repositorio local con uno remoto en Git?",
               "answers": [
                 {
-                  "text": "Determina si el repositorio puede ejecutar código automáticamente.",
+                  "text": "git connect",
                   "correct": false
                 },
                 {
-                  "text": "Controla quién puede ver y contribuir al repositorio.",
+                  "text": "git remote add origin",
                   "correct": true
                 },
                 {
-                  "text": "Establece si el repositorio es compatible con múltiples lenguajes de programación.",
+                  "text": "git link",
                   "correct": false
                 },
                 {
-                  "text": "Decide la frecuencia con la que el repositorio se actualiza automáticamente.",
+                  "text": "git push origin master",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         }
       ]
     },

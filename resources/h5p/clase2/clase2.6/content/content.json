@@ -2,7 +2,7 @@
    "interactiveVideo":{
       "video":{
          "startScreenOptions":{
-            "title":"V\u00eddeo Interactivo",
+            "title":"Primer commit en GitHub",
             "hideStartTitle":false
          },
          "textTracks":{
@@ -16,7 +16,7 @@
          },
          "files":[
             {
-               "path":"https:\/\/youtu.be\/7zzfixRVMn0?si=kihxetgctf35J9j-",
+               "path":"https:\/\/youtu.be\/HXlFQQBD0DY?si=-1zxy4lR7bAu3wXh",
                "mime":"video\/YouTube",
                "copyright":{
                   "license":"U"
@@ -32,34 +32,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 208,
-            "to": 218
+            "from": 295,  // After the first 10 seconds of the second half of the video
+            "to": 305
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Cuál es el principal beneficio de utilizar repositorios en GitHub según el video?",
+              "question": "¿Qué comando se utiliza para agregar archivos al área de staging en Git?",
               "answers": [
                 {
-                  "text": "Permite ejecutar código de manera más rápida.",
-                  "correct": false
-                },
-                {
-                  "text": "Facilita la gestión de versiones y evita la duplicación de archivos.",
+                  "text": "git add",
                   "correct": true
                 },
                 {
-                  "text": "Incrementa la seguridad del código fuente.",
+                  "text": "git commit",
                   "correct": false
                 },
                 {
-                  "text": "Permite el trabajo offline sin necesidad de internet.",
+                  "text": "git push",
+                  "correct": false
+                },
+                {
+                  "text": "git pull",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         },
         {
           "x": 0,
@@ -67,34 +82,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 407,
-            "to": 417
+            "from": 580,  // 10 seconds before the video ends
+            "to": 590
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Qué permite especificar la opción de visibilidad de un repositorio en GitHub?",
+              "question": "¿Cuál es el propósito de utilizar el comando 'git commit'?",
               "answers": [
                 {
-                  "text": "Determina si el repositorio puede ejecutar código automáticamente.",
+                  "text": "Para empujar cambios al repositorio remoto.",
                   "correct": false
                 },
                 {
-                  "text": "Controla quién puede ver y contribuir al repositorio.",
+                  "text": "Para agregar archivos al área de staging.",
+                  "correct": false
+                },
+                {
+                  "text": "Para agrupar cambios con un mensaje descriptivo antes de subirlos.",
                   "correct": true
                 },
                 {
-                  "text": "Establece si el repositorio es compatible con múltiples lenguajes de programación.",
-                  "correct": false
-                },
-                {
-                  "text": "Decide la frecuencia con la que el repositorio se actualiza automáticamente.",
+                  "text": "Para actualizar el repositorio local con cambios desde el remoto.",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         }
       ]
     },

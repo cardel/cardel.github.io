@@ -2,7 +2,7 @@
    "interactiveVideo":{
       "video":{
          "startScreenOptions":{
-            "title":"V\u00eddeo Interactivo",
+            "title":"Readme y Markdown",
             "hideStartTitle":false
          },
          "textTracks":{
@@ -16,7 +16,7 @@
          },
          "files":[
             {
-               "path":"https:\/\/youtu.be\/7zzfixRVMn0?si=kihxetgctf35J9j-",
+               "path":"https:\/\/youtu.be\/UHQfSlFEkSk?si=8TnULDROVhfFxMO7",
                "mime":"video\/YouTube",
                "copyright":{
                   "license":"U"
@@ -32,34 +32,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 208,
-            "to": 218
+            "from": 253,  // After the first 10 seconds of the second half of the video
+            "to": 263
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Cuál es el principal beneficio de utilizar repositorios en GitHub según el video?",
+              "question": "¿Qué información generalmente se incluye en el archivo README de un repositorio de GitHub?",
               "answers": [
                 {
-                  "text": "Permite ejecutar código de manera más rápida.",
-                  "correct": false
-                },
-                {
-                  "text": "Facilita la gestión de versiones y evita la duplicación de archivos.",
+                  "text": "Instrucciones de instalación y uso del proyecto.",
                   "correct": true
                 },
                 {
-                  "text": "Incrementa la seguridad del código fuente.",
+                  "text": "Códigos fuente completos del proyecto.",
                   "correct": false
                 },
                 {
-                  "text": "Permite el trabajo offline sin necesidad de internet.",
+                  "text": "Datos personales del desarrollador.",
+                  "correct": false
+                },
+                {
+                  "text": "Contraseñas y datos sensibles del proyecto.",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         },
         {
           "x": 0,
@@ -67,34 +82,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 407,
-            "to": 417
+            "from": 393,  // 10 seconds before the video ends
+            "to": 403
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Qué permite especificar la opción de visibilidad de un repositorio en GitHub?",
+              "question": "¿Cómo se puede modificar el archivo README de un proyecto en GitHub?",
               "answers": [
                 {
-                  "text": "Determina si el repositorio puede ejecutar código automáticamente.",
-                  "correct": false
-                },
-                {
-                  "text": "Controla quién puede ver y contribuir al repositorio.",
+                  "text": "Utilizando la interfaz de edición en GitHub.",
                   "correct": true
                 },
                 {
-                  "text": "Establece si el repositorio es compatible con múltiples lenguajes de programación.",
+                  "text": "Enviando un correo electrónico a GitHub.",
                   "correct": false
                 },
                 {
-                  "text": "Decide la frecuencia con la que el repositorio se actualiza automáticamente.",
+                  "text": "Solamente descargando y editando localmente.",
+                  "correct": false
+                },
+                {
+                  "text": "Usando comandos de consola exclusivamente.",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         }
       ]
     },

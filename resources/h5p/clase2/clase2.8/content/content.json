@@ -16,7 +16,7 @@
          },
          "files":[
             {
-               "path":"https:\/\/youtu.be\/7zzfixRVMn0?si=kihxetgctf35J9j-",
+               "path":"https:\/\/youtu.be\/egH5XfSC6FE?si=0YpXkxzl8QoXcKxw",
                "mime":"video\/YouTube",
                "copyright":{
                   "license":"U"
@@ -32,34 +32,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 208,
-            "to": 218
+            "from": 137,  // After the first 10 seconds of the second half of the video
+            "to": 147
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Cuál es el principal beneficio de utilizar repositorios en GitHub según el video?",
+              "question": "¿Cuál es el valor por defecto de un arreglo de bytes en Java?",
               "answers": [
                 {
-                  "text": "Permite ejecutar código de manera más rápida.",
-                  "correct": false
-                },
-                {
-                  "text": "Facilita la gestión de versiones y evita la duplicación de archivos.",
+                  "text": "0",
                   "correct": true
                 },
                 {
-                  "text": "Incrementa la seguridad del código fuente.",
+                  "text": "1",
                   "correct": false
                 },
                 {
-                  "text": "Permite el trabajo offline sin necesidad de internet.",
+                  "text": "null",
+                  "correct": false
+                },
+                {
+                  "text": "undefined",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         },
         {
           "x": 0,
@@ -67,34 +82,49 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 407,
-            "to": 417
+            "from": 342,  // 10 seconds before the video ends
+            "to": 352
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Qué permite especificar la opción de visibilidad de un repositorio en GitHub?",
+              "question": "¿Qué método de iteración se utiliza comúnmente para recorrer arreglos?",
               "answers": [
                 {
-                  "text": "Determina si el repositorio puede ejecutar código automáticamente.",
-                  "correct": false
-                },
-                {
-                  "text": "Controla quién puede ver y contribuir al repositorio.",
+                  "text": "for",
                   "correct": true
                 },
                 {
-                  "text": "Establece si el repositorio es compatible con múltiples lenguajes de programación.",
+                  "text": "while",
                   "correct": false
                 },
                 {
-                  "text": "Decide la frecuencia con la que el repositorio se actualiza automáticamente.",
+                  "text": "foreach",
+                  "correct": false
+                },
+                {
+                  "text": "map",
                   "correct": false
                 }
               ]
             }
-          }
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         }
       ]
     },
