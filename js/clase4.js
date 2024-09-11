@@ -1,5 +1,3 @@
-const { H5P } = H5PStandalone;
-
 document.addEventListener("DOMContentLoaded", function () {
   const firstTab = document.querySelector(".nav-link.active");
   if (firstTab) {
