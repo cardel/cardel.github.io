@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function loadH5PContent(tab) {
+  const { H5P } = H5PStandalone;
   const targetId = tab.getAttribute("data-bs-target");
   const containerId = targetId.replace("#content-", "h5p-container-");
   const index = targetId.replace("#content-", "");

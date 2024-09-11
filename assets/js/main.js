@@ -6,7 +6,6 @@
  * License: https://bootstrapmade.com/license/
  */
 
-const { H5P } = H5PStandalone;
 (function () {
   "use strict";
 
