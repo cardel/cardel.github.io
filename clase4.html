@@ -77,7 +77,7 @@
           // Espera a que el menú se cargue antes de ejecutar el script principal
           Promise.all([loadMenu]).then(() => {
             const script = document.createElement("script");
-            script.src = "main.js";
+            script.src = "assets/js/main.js";
             document.body.appendChild(script);
           });
         </script>
@@ -444,6 +444,5 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
     <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
   </body>
 </html>
