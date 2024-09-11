@@ -1,30 +1,30 @@
 {
-   "interactiveVideo":{
-      "video":{
-         "startScreenOptions":{
-            "title":"Conectarnos a GIT",
-            "hideStartTitle":false
-         },
-         "textTracks":{
-            "videoTrack":[
-               {
-                  "label":"Subt\u00edtulos",
-                  "kind":"subtitles",
-                  "srcLang":"en"
-               }
-            ]
-         },
-         "files":[
-            {
-               "path":"https:\/\/youtu.be\/3VrCCvgfaL8?si=3O067OL22E9f0wWZ",
-               "mime":"video\/YouTube",
-               "copyright":{
-                  "license":"U"
-               }
-            }
-         ]
+  "interactiveVideo": {
+    "video": {
+      "startScreenOptions": {
+        "title": "Conectarnos a GIT",
+        "hideStartTitle": false
       },
-     "assets": {
+      "textTracks": {
+        "videoTrack": [
+          {
+            "label": "Subt\u00edtulos",
+            "kind": "subtitles",
+            "srcLang": "en"
+          }
+        ]
+      },
+      "files": [
+        {
+          "path": "https://youtu.be/ApN38h5gd5k?si=ylgM3CjZeKutH9dQ",
+          "mime": "video/YouTube",
+          "copyright": {
+            "license": "U"
+          }
+        }
+      ]
+    },
+    "assets": {
       "interactions": [
         {
           "x": 0,
@@ -32,29 +32,25 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 347,  
-            "to": 357
+            "from": 60,
+            "to": 80
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Cuál es el propósito de la carpeta oculta .git mencionada en el video?",
+              "question": "¿Cuál es el objetivo de la encapsulación en programación?",
               "answers": [
                 {
-                  "text": "Contiene configuraciones de usuario de Git.",
-                  "correct": false
-                },
-                {
-                  "text": "Almacena la información de versionado del repositorio.",
+                  "text": "Proteger los datos de acceso indebido",
                   "correct": true
                 },
                 {
-                  "text": "Guarda copias de seguridad del código.",
+                  "text": "Mejorar el rendimiento del programa",
                   "correct": false
                 },
                 {
-                  "text": "Optimiza el rendimiento del sistema Git.",
+                  "text": "Permitir que todos los datos sean accesibles desde cualquier lugar",
                   "correct": false
                 }
               ]
@@ -82,29 +78,25 @@
           "width": 40,
           "height": 22.5,
           "duration": {
-            "from": 684,  
-            "to": 694
+            "from": 300,
+            "to": 320
           },
           "libraryTitle": "Multiple Choice",
           "action": {
             "library": "H5P.MultiChoice 1.16",
             "params": {
-              "question": "¿Qué comando se utiliza para conectar un repositorio local con uno remoto en Git?",
+              "question": "¿Qué hace un método 'getter' en Java?",
               "answers": [
                 {
-                  "text": "git connect",
-                  "correct": false
-                },
-                {
-                  "text": "git remote add origin",
+                  "text": "Devuelve el valor de un atributo privado",
                   "correct": true
                 },
                 {
-                  "text": "git link",
+                  "text": "Modifica el valor de un atributo privado",
                   "correct": false
                 },
                 {
-                  "text": "git push origin master",
+                  "text": "Elimina un atributo privado",
                   "correct": false
                 }
               ]
@@ -128,98 +120,98 @@
         }
       ]
     },
-    "summary":{
-         "task":{
-            "library":"H5P.Summary 1.10",
-            "params":{
-               "intro":"Elige la oraci\u00f3n correcta.",
-               "summaries":[
-                  {
-                     "subContentId":"ab309304-5a29-4bcf-806c-741ba8a1cf77",
-                     "tip":""
-                  }
-               ],
-               "overallFeedback":[
-                  {
-                     "from":0,
-                     "to":100
-                  }
-               ],
-               "solvedLabel":"Progreso:",
-               "scoreLabel":"Respuestas incorrectas:",
-               "resultLabel":"Tu resultado",
-               "labelCorrect":"Correcta.",
-               "labelIncorrect":"\u00a1Incorrecto! Por favor int\u00e9ntalo otra vez.",
-               "alternativeIncorrectLabel":"Incorrecto",
-               "labelCorrectAnswers":"Respuestas correctas.",
-               "tipButtonLabel":"Mostrar pista",
-               "scoreBarLabel":"Has conseguido :num de un total de :total puntos",
-               "progressText":"Progreso :num de :total"
-            },
-            "subContentId":"87db0b51-e369-41e9-84d0-6827b90d3e0b",
-            "metadata":{
-               "contentType":"Summary",
-               "license":"U",
-               "title":"Sin t\u00edtulo Summary"
+    "summary": {
+      "task": {
+        "library": "H5P.Summary 1.10",
+        "params": {
+          "intro": "Elige la oraci\u00f3n correcta.",
+          "summaries": [
+            {
+              "subContentId": "ab309304-5a29-4bcf-806c-741ba8a1cf77",
+              "tip": ""
             }
-         },
-         "displayAt":3
-      }
-   },
-   "override":{
-      "autoplay":false,
-      "loop":false,
-      "showBookmarksmenuOnLoad":false,
-      "showRewind10":false,
-      "preventSkippingMode":"none",
-      "deactivateSound":false
-   },
-   "l10n":{
-      "interaction":"Interacci\u00f3n",
-      "play":"Reproducir",
-      "pause":"Pausa",
-      "mute":"Silenciar, sonido activo en este momento",
-      "unmute":"Activar sonido, actualmente silenciado",
-      "quality":"Calidad del V\u00eddeo",
-      "captions":"Leyendas",
-      "close":"Cerrar",
-      "fullscreen":"Pantalla Completa",
-      "exitFullscreen":"Salir de Pantalla Completa",
-      "summary":"Abrir di\u00e1logo de resumen",
-      "bookmarks":"Marcadores",
-      "endscreen":"Pantalla de Env\u00edo",
-      "defaultAdaptivitySeekLabel":"Continuar",
-      "continueWithVideo":"Continuar con el v\u00eddeo",
-      "more":"M\u00e1s opciones de reproducci\u00f3n",
-      "playbackRate":"Velocidad de reproducci\u00f3n",
-      "rewind10":"Retroceder 10 segundos",
-      "navDisabled":"La navegaci\u00f3n est\u00e1 deshabilitada",
-      "navForwardDisabled":"La navegaci\u00f3n hacia adelante est\u00e1 deshabilitada",
-      "sndDisabled":"El sonido est\u00e1 deshabilitado",
-      "requiresCompletionWarning":"Debes responder correctamente a todas las preguntas antes de continuar.",
-      "back":"Atr\u00e1s",
-      "hours":"Horas",
-      "minutes":"Minutos",
-      "seconds":"Segundos",
-      "currentTime":"Tiempo actual:",
-      "totalTime":"Tiempo total:",
-      "singleInteractionAnnouncement":"Interacci\u00f3n aparecida:",
-      "multipleInteractionsAnnouncement":"Han aparecido m\u00faltiples interacciones.",
-      "videoPausedAnnouncement":"V\u00eddeo en pausa",
-      "content":"Contenido",
-      "answered":"@answered contestadas",
-      "endcardTitle":"@answered pregunta(s) contestada(s)",
-      "endcardInformation":"Has contestado @answered preguntas, haz clic en la parte inferior para enviar tus respuestas.",
-      "endcardInformationOnSubmitButtonDisabled":"Has contestado @answered preguntas.",
-      "endcardInformationNoAnswers":"No has respondido ninguna pregunta.",
-      "endcardInformationMustHaveAnswer":"Debes responder al menos una pregunta antes de poder enviar tus respuestas.",
-      "endcardSubmitButton":"Enviar Respuestas",
-      "endcardSubmitMessage":"\u00a1Se han enviado tus respuestas!",
-      "endcardTableRowAnswered":"Preguntas respondidas",
-      "endcardTableRowScore":"Puntuaci\u00f3n",
-      "endcardAnsweredScore":"respondidas",
-      "endCardTableRowSummaryWithScore":"Has obtenido @score de un total de @total puntos para la @question que apareci\u00f3 despu\u00e9s de @minutes minutos y @seconds segundos.",
-      "endCardTableRowSummaryWithoutScore":"Has contestado contestado la @question que apareci\u00f3 despu\u00e9s de @minutes minutos y @seconds segundos.",
-      "videoProgressBar":"Progreso del video"
-   }
+          ],
+          "overallFeedback": [
+            {
+              "from": 0,
+              "to": 100
+            }
+          ],
+          "solvedLabel": "Progreso:",
+          "scoreLabel": "Respuestas incorrectas:",
+          "resultLabel": "Tu resultado",
+          "labelCorrect": "Correcta.",
+          "labelIncorrect": "\u00a1Incorrecto! Por favor int\u00e9ntalo otra vez.",
+          "alternativeIncorrectLabel": "Incorrecto",
+          "labelCorrectAnswers": "Respuestas correctas.",
+          "tipButtonLabel": "Mostrar pista",
+          "scoreBarLabel": "Has conseguido :num de un total de :total puntos",
+          "progressText": "Progreso :num de :total"
+        },
+        "subContentId": "87db0b51-e369-41e9-84d0-6827b90d3e0b",
+        "metadata": {
+          "contentType": "Summary",
+          "license": "U",
+          "title": "Sin t\u00edtulo Summary"
+        }
+      },
+      "displayAt": 3
+    }
+  },
+  "override": {
+    "autoplay": false,
+    "loop": false,
+    "showBookmarksmenuOnLoad": false,
+    "showRewind10": false,
+    "preventSkippingMode": "none",
+    "deactivateSound": false
+  },
+  "l10n": {
+    "interaction": "Interacci\u00f3n",
+    "play": "Reproducir",
+    "pause": "Pausa",
+    "mute": "Silenciar, sonido activo en este momento",
+    "unmute": "Activar sonido, actualmente silenciado",
+    "quality": "Calidad del V\u00eddeo",
+    "captions": "Leyendas",
+    "close": "Cerrar",
+    "fullscreen": "Pantalla Completa",
+    "exitFullscreen": "Salir de Pantalla Completa",
+    "summary": "Abrir di\u00e1logo de resumen",
+    "bookmarks": "Marcadores",
+    "endscreen": "Pantalla de Env\u00edo",
+    "defaultAdaptivitySeekLabel": "Continuar",
+    "continueWithVideo": "Continuar con el v\u00eddeo",
+    "more": "M\u00e1s opciones de reproducci\u00f3n",
+    "playbackRate": "Velocidad de reproducci\u00f3n",
+    "rewind10": "Retroceder 10 segundos",
+    "navDisabled": "La navegaci\u00f3n est\u00e1 deshabilitada",
+    "navForwardDisabled": "La navegaci\u00f3n hacia adelante est\u00e1 deshabilitada",
+    "sndDisabled": "El sonido est\u00e1 deshabilitado",
+    "requiresCompletionWarning": "Debes responder correctamente a todas las preguntas antes de continuar.",
+    "back": "Atr\u00e1s",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos",
+    "currentTime": "Tiempo actual:",
+    "totalTime": "Tiempo total:",
+    "singleInteractionAnnouncement": "Interacci\u00f3n aparecida:",
+    "multipleInteractionsAnnouncement": "Han aparecido m\u00faltiples interacciones.",
+    "videoPausedAnnouncement": "V\u00eddeo en pausa",
+    "content": "Contenido",
+    "answered": "@answered contestadas",
+    "endcardTitle": "@answered pregunta(s) contestada(s)",
+    "endcardInformation": "Has contestado @answered preguntas, haz clic en la parte inferior para enviar tus respuestas.",
+    "endcardInformationOnSubmitButtonDisabled": "Has contestado @answered preguntas.",
+    "endcardInformationNoAnswers": "No has respondido ninguna pregunta.",
+    "endcardInformationMustHaveAnswer": "Debes responder al menos una pregunta antes de poder enviar tus respuestas.",
+    "endcardSubmitButton": "Enviar Respuestas",
+    "endcardSubmitMessage": "\u00a1Se han enviado tus respuestas!",
+    "endcardTableRowAnswered": "Preguntas respondidas",
+    "endcardTableRowScore": "Puntuaci\u00f3n",
+    "endcardAnsweredScore": "respondidas",
+    "endCardTableRowSummaryWithScore": "Has obtenido @score de un total de @total puntos para la @question que apareci\u00f3 despu\u00e9s de @minutes minutos y @seconds segundos.",
+    "endCardTableRowSummaryWithoutScore": "Has contestado contestado la @question que apareci\u00f3 despu\u00e9s de @minutes minutos y @seconds segundos.",
+    "videoProgressBar": "Progreso del video"
+  }
 }
