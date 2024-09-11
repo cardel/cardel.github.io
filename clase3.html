@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -65,30 +65,15 @@
           <h1 class="sitename">Universidad del Valle</h1>
         </a>
 
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li>
-              <a href="index.html" class="active">Home<br /></a>
-            </li>
-            <li class="dropdown">
-              <a href="#"
-                ><span>Clases</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i
-              ></a>
-              <ul>
-                <li><a href="clase1.html">Clase 1</a></li>
-                <li><a href="clase2.html">Clase 2</a></li>
-                <li><a href="clase3.html">Clase 3</a></li>
-                <li><a href="clase4.html">Clase 4</a></li>
-                <li><a href="clase5.html">Clase 5</a></li>
-                <li><a href="clase6.html">Clase 6</a></li>
-                <li><a href="clase7.html">Clase 7</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+        <div id="menu-container"></div>
+        <script>
+          fetch("menu.html")
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById("menu-container").innerHTML = data;
+            })
+            .catch((error) => console.log(error));
+        </script>
       </div>
     </header>
 
@@ -160,7 +145,7 @@
         </div>
       </section>
 
-      <script type="text/javascript" src="./js/clase2.js"></script>
+      <script type="text/javascript" src="./js/clase3.js"></script>
       <script type="text/javascript" src="./js/youtube.js"></script>
 
       <!-- /About Us Section -->
@@ -225,6 +210,194 @@
         </div>
       </section>
       <!-- /Why Us Section -->
+      <div class="container mt-3">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="h5pTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="tab-1"
+              data-bs-toggle="tab"
+              data-bs-target="#content-1"
+              type="button"
+              role="tab"
+              aria-controls="content-1"
+              aria-selected="true"
+            >
+              Video 1
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab-2"
+              data-bs-toggle="tab"
+              data-bs-target="#content-2"
+              type="button"
+              role="tab"
+              aria-controls="content-2"
+              aria-selected="false"
+            >
+              Video 2
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab-3"
+              data-bs-toggle="tab"
+              data-bs-target="#content-3"
+              type="button"
+              role="tab"
+              aria-controls="content-3"
+              aria-selected="false"
+            >
+              Video 3
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab-4"
+              data-bs-toggle="tab"
+              data-bs-target="#content-4"
+              type="button"
+              role="tab"
+              aria-controls="content-4"
+              aria-selected="false"
+            >
+              Video 4
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab-5"
+              data-bs-toggle="tab"
+              data-bs-target="#content-5"
+              type="button"
+              role="tab"
+              aria-controls="content-5"
+              aria-selected="false"
+            >
+              Video 5
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab-6"
+              data-bs-toggle="tab"
+              data-bs-target="#content-6"
+              type="button"
+              role="tab"
+              aria-controls="content-6"
+              aria-selected="false"
+            >
+              Video 6
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab-7"
+              data-bs-toggle="tab"
+              data-bs-target="#content-7"
+              type="button"
+              role="tab"
+              aria-controls="content-7"
+              aria-selected="false"
+            >
+              Video 7
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tab-8"
+              data-bs-toggle="tab"
+              data-bs-target="#content-8"
+              type="button"
+              role="tab"
+              aria-controls="content-8"
+              aria-selected="false"
+            >
+              Video 8
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div
+            class="tab-pane fade show active"
+            id="content-1"
+            role="tabpanel"
+            aria-labelledby="tab-1"
+          >
+            <div id="h5p-container-1"></div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="content-2"
+            role="tabpanel"
+            aria-labelledby="tab-2"
+          >
+            <div id="h5p-container-2"></div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="content-3"
+            role="tabpanel"
+            aria-labelledby="tab-3"
+          >
+            <div id="h5p-container-3"></div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="content-4"
+            role="tabpanel"
+            aria-labelledby="tab-4"
+          >
+            <div id="h5p-container-4"></div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="content-5"
+            role="tabpanel"
+            aria-labelledby="tab-5"
+          >
+            <div id="h5p-container-5"></div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="content-6"
+            role="tabpanel"
+            aria-labelledby="tab-6"
+          >
+            <div id="h5p-container-6"></div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="content-7"
+            role="tabpanel"
+            aria-labelledby="tab-7"
+          >
+            <div id="h5p-container-7"></div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="content-8"
+            role="tabpanel"
+            aria-labelledby="tab-8"
+          >
+            <div id="h5p-container-8"></div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="./js/clase2.js"></script>
+      <script type="text/javascript" src="./js/youtube.js"></script>
     </main>
 
     <footer id="footer" class="footer position-relative light-background">
