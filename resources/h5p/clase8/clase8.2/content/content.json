@@ -2,7 +2,7 @@
   "interactiveVideo": {
     "video": {
       "startScreenOptions": {
-        "title": "V\u00eddeo Interactivo",
+        "title": "Tutorial de GitHub",
         "hideStartTitle": false
       },
       "textTracks": {
@@ -16,7 +16,7 @@
       },
   "files": [
     {
-      "path": "https://youtu.be/217488_PlfE?si=TyZkcykmT5LQBLh7",
+      "path": "https://youtu.be/H5hBUb112cE?si=VKApK3Mw-gWYk18h",
       "mime": "video/YouTube",
       "copyright": {
         "license": "U"
@@ -32,25 +32,25 @@
       "width": 40,
       "height": 22.5,
       "duration": {
-        "from": 215,
-        "to": 225
+        "from": 113,
+        "to": 123
       },
       "libraryTitle": "Multiple Choice",
       "action": {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "¿Qué función tiene la zona gris mencionada en el Border layout?",
+          "question": "¿Cómo se organizan los elementos en un GridLayout?",
           "answers": [
             {
-              "text": "Asignar espacios visibles a los componentes",
-              "correct": false
-            },
-            {
-              "text": "Asignar el borde y el contenedor visual",
+              "text": "De izquierda a derecha, de arriba hacia abajo",
               "correct": true
             },
             {
-              "text": "Controlar el tamaño de la ventana",
+              "text": "Alineados al centro por defecto",
+              "correct": false
+            },
+            {
+              "text": "Se colocan al azar según disponibilidad",
               "correct": false
             }
           ]
@@ -78,25 +78,25 @@
       "width": 40,
       "height": 22.5,
       "duration": {
-        "from": 431,
-        "to": 441
+        "from": 226,
+        "to": 236
       },
       "libraryTitle": "Multiple Choice",
       "action": {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "¿Qué sucede si se intentan poner dos componentes en la misma posición del Border layout?",
+          "question": "¿Qué configuración de GridLayout permite configurar márgenes?",
           "answers": [
             {
-              "text": "Se da prioridad al último componente agregado",
+              "text": "Especificando tamaño de filas y columnas seguido de márgenes",
               "correct": true
             },
             {
-              "text": "Ambos componentes se solapan",
+              "text": "Solo filas y columnas, los márgenes se configuran en otro lado",
               "correct": false
             },
             {
-              "text": "El primero componente se bloquea",
+              "text": "El único ajuste es el color de fondo",
               "correct": false
             }
           ]

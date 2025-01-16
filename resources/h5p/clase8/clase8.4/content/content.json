@@ -14,111 +14,111 @@
           }
         ]
       },
-  "files": [
-    {
-      "path": "https://youtu.be/Skror_Dwdxs?si=YzD7gGP8yPXNeQS1",
-      "mime": "video/YouTube",
-      "copyright": {
-        "license": "U"
-      }
-    }
-  ]
+      "files": [
+        {
+          "path": "https://youtu.be/jB2aRudgMzU?si=XnLv3mZBBc1tfGrW",
+          "mime": "video/YouTube",
+          "copyright": {
+            "license": "U"
+          }
+        }
+      ]
     },
     "assets": {
       "interactions": [
-    {
-      "x": 0,
-      "y": 0,
-      "width": 40,
-      "height": 22.5,
-      "duration": {
-        "from": 201,
-        "to": 211
-      },
-      "libraryTitle": "Multiple Choice",
-      "action": {
-        "library": "H5P.MultiChoice 1.16",
-        "params": {
-          "question": "¿Qué ajuste permite cambiar el color de los gráficos en Java?",
-          "answers": [
-            {
-              "text": "Usar new Color con valores RGB",
-              "correct": true
-            },
-            {
-              "text": "setDefaultColor(Color)",
-              "correct": false
-            },
-            {
-              "text": "drawColor(Color)",
-              "correct": false
+        {
+          "x": 0,
+          "y": 0,
+          "width": 40,
+          "height": 22.5,
+          "duration": {
+            "from": 203,
+            "to": 213
+          },
+          "libraryTitle": "Multiple Choice",
+          "action": {
+            "library": "H5P.MultiChoice 1.16",
+            "params": {
+              "question": "¿Para qué se usa el método 'Paint' en Java?",
+              "answers": [
+                {
+                  "text": "Para dibujar gráficos en un Jframe",
+                  "correct": true
+                },
+                {
+                  "text": "Para controlar eventos de usuario",
+                  "correct": false
+                },
+                {
+                  "text": "Para configurar el tamaño de la ventana",
+                  "correct": false
+                }
+              ]
             }
-          ]
-        }
-      },
-      "pause": true,
-      "displayType": "poster",
-      "buttonOnMobile": false,
-      "adaptivity": {
-        "correct": {
-          "allowOptOut": false,
-          "message": ""
-        },
-        "wrong": {
-          "allowOptOut": false,
-          "message": ""
-        },
-        "requireCompletion": false
-      },
-      "label": ""
-    },
-    {
-      "x": 0,
-      "y": 0,
-      "width": 40,
-      "height": 22.5,
-      "duration": {
-        "from": 393,
-        "to": 403
-      },
-      "libraryTitle": "Multiple Choice",
-      "action": {
-        "library": "H5P.MultiChoice 1.16",
-        "params": {
-          "question": "¿Qué significa el acrónimo RGB en el contexto del color?",
-          "answers": [
-            {
-              "text": "Red, Green, Blue",
-              "correct": true
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
             },
-            {
-              "text": "Red, Gray, Black",
-              "correct": false
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
             },
-            {
-              "text": "Roman, Greek, Byzantine",
-              "correct": false
+            "requireCompletion": false
+          },
+          "label": ""
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "width": 40,
+          "height": 22.5,
+          "duration": {
+            "from": 407,
+            "to": 417
+          },
+          "libraryTitle": "Multiple Choice",
+          "action": {
+            "library": "H5P.MultiChoice 1.16",
+            "params": {
+              "question": "¿Dónde se encuentra el punto (0,0) en un Canvas en Java?",
+              "answers": [
+                {
+                  "text": "Esquina superior izquierda",
+                  "correct": true
+                },
+                {
+                  "text": "Centro del Canvas",
+                  "correct": false
+                },
+                {
+                  "text": "Esquina inferior derecha",
+                  "correct": false
+                }
+              ]
             }
-          ]
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         }
-      },
-      "pause": true,
-      "displayType": "poster",
-      "buttonOnMobile": false,
-      "adaptivity": {
-        "correct": {
-          "allowOptOut": false,
-          "message": ""
-        },
-        "wrong": {
-          "allowOptOut": false,
-          "message": ""
-        },
-        "requireCompletion": false
-      },
-      "label": ""
-    }
-  ]    },
+      ]   },
     "summary": {
       "task": {
         "library": "H5P.Summary 1.10",

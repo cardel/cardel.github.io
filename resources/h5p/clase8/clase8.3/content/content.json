@@ -14,111 +14,111 @@
           }
         ]
       },
-  "files": [
-    {
-      "path": "https://youtu.be/H5hBUb112cE?si=VKApK3Mw-gWYk18h",
-      "mime": "video/YouTube",
-      "copyright": {
-        "license": "U"
-      }
-    }
-  ]
+      "files": [
+        {
+          "path": "https://youtu.be/sxfJSlj3quQ?si=nqlQZbBBiGZpatUR",
+          "mime": "video/YouTube",
+          "copyright": {
+            "license": "U"
+          }
+        }
+      ]
     },
     "assets": {
-    "interactions": [
-    {
-      "x": 0,
-      "y": 0,
-      "width": 40,
-      "height": 22.5,
-      "duration": {
-        "from": 113,
-        "to": 123
-      },
-      "libraryTitle": "Multiple Choice",
-      "action": {
-        "library": "H5P.MultiChoice 1.16",
-        "params": {
-          "question": "¿Cómo se organizan los elementos en un GridLayout?",
-          "answers": [
-            {
-              "text": "De izquierda a derecha, de arriba hacia abajo",
-              "correct": true
-            },
-            {
-              "text": "Alineados al centro por defecto",
-              "correct": false
-            },
-            {
-              "text": "Se colocan al azar según disponibilidad",
-              "correct": false
+      "interactions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 40,
+          "height": 22.5,
+          "duration": {
+            "from": 221,
+            "to": 231
+          },
+          "libraryTitle": "Multiple Choice",
+          "action": {
+            "library": "H5P.MultiChoice 1.16",
+            "params": {
+              "question": "¿Cuál es el problema principal de usar un único layout?",
+              "answers": [
+                {
+                  "text": "Limita la creación de interfaces complejas",
+                  "correct": true
+                },
+                {
+                  "text": "Ocupa más memoria",
+                  "correct": false
+                },
+                {
+                  "text": "Requiere más tiempo para ejecutarse",
+                  "correct": false
+                }
+              ]
             }
-          ]
-        }
-      },
-      "pause": true,
-      "displayType": "poster",
-      "buttonOnMobile": false,
-      "adaptivity": {
-        "correct": {
-          "allowOptOut": false,
-          "message": ""
-        },
-        "wrong": {
-          "allowOptOut": false,
-          "message": ""
-        },
-        "requireCompletion": false
-      },
-      "label": ""
-    },
-    {
-      "x": 0,
-      "y": 0,
-      "width": 40,
-      "height": 22.5,
-      "duration": {
-        "from": 226,
-        "to": 236
-      },
-      "libraryTitle": "Multiple Choice",
-      "action": {
-        "library": "H5P.MultiChoice 1.16",
-        "params": {
-          "question": "¿Qué configuración de GridLayout permite configurar márgenes?",
-          "answers": [
-            {
-              "text": "Especificando tamaño de filas y columnas seguido de márgenes",
-              "correct": true
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
             },
-            {
-              "text": "Solo filas y columnas, los márgenes se configuran en otro lado",
-              "correct": false
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
             },
-            {
-              "text": "El único ajuste es el color de fondo",
-              "correct": false
+            "requireCompletion": false
+          },
+          "label": ""
+        },
+        {
+          "x": 0,
+          "y": 0,
+          "width": 40,
+          "height": 22.5,
+          "duration": {
+            "from": 422,
+            "to": 432
+          },
+          "libraryTitle": "Multiple Choice",
+          "action": {
+            "library": "H5P.MultiChoice 1.16",
+            "params": {
+              "question": "¿Para qué se usa principalmente un JPanel?",
+              "answers": [
+                {
+                  "text": "Para organizar componentes en un espacio definido",
+                  "correct": true
+                },
+                {
+                  "text": "Para agregar imágenes a la interfaz",
+                  "correct": false
+                },
+                {
+                  "text": "Para manejar eventos de usuario",
+                  "correct": false
+                }
+              ]
             }
-          ]
+          },
+          "pause": true,
+          "displayType": "poster",
+          "buttonOnMobile": false,
+          "adaptivity": {
+            "correct": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "wrong": {
+              "allowOptOut": false,
+              "message": ""
+            },
+            "requireCompletion": false
+          },
+          "label": ""
         }
-      },
-      "pause": true,
-      "displayType": "poster",
-      "buttonOnMobile": false,
-      "adaptivity": {
-        "correct": {
-          "allowOptOut": false,
-          "message": ""
-        },
-        "wrong": {
-          "allowOptOut": false,
-          "message": ""
-        },
-        "requireCompletion": false
-      },
-      "label": ""
-    }
-  ]    },
+      ]   },
     "summary": {
       "task": {
         "library": "H5P.Summary 1.10",

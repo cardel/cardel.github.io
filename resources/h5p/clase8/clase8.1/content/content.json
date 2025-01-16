@@ -2,7 +2,7 @@
   "interactiveVideo": {
     "video": {
       "startScreenOptions": {
-        "title": "Readme y Markdown",
+        "title": "V\u00eddeo Interactivo",
         "hideStartTitle": false
       },
       "textTracks": {
@@ -16,7 +16,7 @@
       },
   "files": [
     {
-      "path": "https://youtu.be/yhkOmGBCdvQ?si=eSHngC_aTCElNjWV",
+      "path": "https://youtu.be/217488_PlfE?si=TyZkcykmT5LQBLh7",
       "mime": "video/YouTube",
       "copyright": {
         "license": "U"
@@ -25,32 +25,32 @@
   ]
     },
     "assets": {
-   "interactions": [
+    "interactions": [
     {
       "x": 0,
       "y": 0,
       "width": 40,
       "height": 22.5,
       "duration": {
-        "from": 186,
-        "to": 196
+        "from": 215,
+        "to": 225
       },
       "libraryTitle": "Multiple Choice",
       "action": {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "¿Cuál es la función principal de un ComboBox en programación?",
+          "question": "¿Qué función tiene la zona gris mencionada en el Border layout?",
           "answers": [
             {
-              "text": "Permitir al usuario seleccionar un valor de una lista desplegable",
-              "correct": true
-            },
-            {
-              "text": "Permitir al usuario ingresar texto libremente",
+              "text": "Asignar espacios visibles a los componentes",
               "correct": false
             },
             {
-              "text": "Mostrar múltiples opciones al mismo tiempo",
+              "text": "Asignar el borde y el contenedor visual",
+              "correct": true
+            },
+            {
+              "text": "Controlar el tamaño de la ventana",
               "correct": false
             }
           ]
@@ -78,25 +78,25 @@
       "width": 40,
       "height": 22.5,
       "duration": {
-        "from": 353,
-        "to": 363
+        "from": 431,
+        "to": 441
       },
       "libraryTitle": "Multiple Choice",
       "action": {
         "library": "H5P.MultiChoice 1.16",
         "params": {
-          "question": "¿Cómo se determina el elemento seleccionado en un ComboBox?",
+          "question": "¿Qué sucede si se intentan poner dos componentes en la misma posición del Border layout?",
           "answers": [
             {
-              "text": "Usando el método getSelectedIndex",
+              "text": "Se da prioridad al último componente agregado",
               "correct": true
             },
             {
-              "text": "Usando el listener del combo",
+              "text": "Ambos componentes se solapan",
               "correct": false
             },
             {
-              "text": "A través de un bucle que recorre todos los elementos",
+              "text": "El primero componente se bloquea",
               "correct": false
             }
           ]
