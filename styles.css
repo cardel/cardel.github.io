@@ -381,6 +381,68 @@ main.doc { padding: 2rem 0 3rem; }
 .cert strong { display: block; }
 .cert .emisor { color: var(--muted); font-size: 0.86rem; }
 
+/* ------------------------- Proyectos (portafolio) ----------------------- */
+
+.proyectos {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
+
+.proj {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.1rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.proj:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.proj-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.proj-head .nombre { font-weight: 650; font-size: 1.05rem; }
+
+.proj .lang {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.proj .desc { color: var(--fg); font-size: 0.92rem; margin: 0; }
+.proj .highlight { color: var(--muted); font-size: 0.85rem; margin: 0; }
+
+.proj .repo-link {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.proj .repo-link:hover { text-decoration: underline; }
+
 /* ------------------------------ Footer ---------------------------------- */
 
 footer.pie {
@@ -400,5 +462,6 @@ footer.pie a:hover { color: var(--accent); }
   .hero-inner { padding-top: 2.4rem; }
   .dos-columnas { grid-template-columns: 1fr; }
   .certs { grid-template-columns: 1fr; }
+  .proyectos { grid-template-columns: 1fr; }
   .tarjeta .flecha { display: none; }
 }

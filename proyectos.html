@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyectos — Carlos A. Delgado</title>
+  <meta name="description" content="Proyectos públicos de Carlos Andrés Delgado Saavedra: investigación, software y material docente de código abierto." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="topbar">
+    <a class="volver" href="index.html">&#8592; Volver al inicio</a>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="monogram" aria-hidden="true">CD</div>
+      <div>
+        <h1>Proyectos</h1>
+        <p class="tagline">Una selección de mis repositorios públicos: investigación, software y material docente de código abierto. Todo el código vive en <a href="https://github.com/cardel" target="_blank" rel="noopener">github.com/cardel</a>.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="doc wrap">
+
+    <section>
+      <h2>Investigación</h2>
+      <div class="proyectos">
+
+        <div class="proj">
+          <div class="proj-head"><span class="nombre">Gestión del espectro</span><span class="lang">Oz · C++ · PHP</span></div>
+          <p class="desc">Trabajo de grado: asignación del espectro radioeléctrico resuelta con programación por restricciones en Mozart/Oz y, en paralelo, con un algoritmo genético en C++, con interfaz web en PHP.</p>
+          <p class="highlight">Dos enfoques de optimización sobre un problema real de telecomunicaciones; base de dos publicaciones.</p>
+          <a class="repo-link" href="https://github.com/cardel/gestionEspectro" target="_blank" rel="noopener">Ver en GitHub &#8594;</a>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head"><span class="nombre">LAMFRIA</span><span class="lang">Python</span></div>
+          <p class="desc">Librería que calcula la dimensión multifractal de redes complejas con el método SandBox y evalúa su robustez ante ataques por azar, por grado y por centralidad.</p>
+          <p class="highlight">Implementada sobre la librería SNAP de Stanford; probada en redes clásicas (karate de Zachary, levadura, <em>C. elegans</em>).</p>
+          <a class="repo-link" href="https://github.com/cardel/lamFria" target="_blank" rel="noopener">Ver en GitHub &#8594;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Software y algoritmos</h2>
+      <div class="proyectos">
+
+        <div class="proj">
+          <div class="proj-head"><span class="nombre">ProyectoTIS</span><span class="lang">Python · Django</span></div>
+          <p class="desc">Aplicación web multi-tenant (un esquema de base de datos por inquilino con <code>django-tenants</code> sobre PostgreSQL) para registrar productores y gestionar fruta.</p>
+          <p class="highlight">Ejemplo funcional de arquitectura multi-tenant, con guía de instalación, migraciones y despliegue en Apache.</p>
+          <a class="repo-link" href="https://github.com/cardel/proyectotis" target="_blank" rel="noopener">Ver en GitHub &#8594;</a>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head"><span class="nombre">Redes neuronales desplegables</span><span class="lang">Python · Flask · Keras</span></div>
+          <p class="desc">Material de la electiva de Redes Neuronales, con una API REST en Flask que sirve un modelo Keras entrenado para predecir dígitos a partir de imágenes.</p>
+          <p class="highlight">Ejemplo educativo listo para desplegar: Dockerfile, <em>entrypoint</em>, dependencias y modelo entrenado incluidos.</p>
+          <a class="repo-link" href="https://github.com/cardel/electivasprofesionales" target="_blank" rel="noopener">Ver en GitHub &#8594;</a>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head"><span class="nombre">Prisionero evolutivo</span><span class="lang">C++</span></div>
+          <p class="desc">Algoritmo genético que evoluciona estrategias (autómatas de estados finitos) para el dilema del prisionero iterado.</p>
+          <p class="highlight">Proyecto completo: cruce, mutación y función de aptitud organizados en clases, con informe y diapositivas.</p>
+          <a class="repo-link" href="https://github.com/cardel/prisioneroevolutivo" target="_blank" rel="noopener">Ver en GitHub &#8594;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Material docente de código abierto</h2>
+      <div class="proyectos">
+
+        <div class="proj">
+          <div class="proj-head"><span class="nombre">Prompts para cursos</span><span class="lang">Markdown</span></div>
+          <p class="desc">Colección de prompts que convierten un LLM en un tutor socrático para tres cursos: Árboles y Grafos, Fundamentos de Lenguajes de Programación y Revisión Sistemática PRISMA.</p>
+          <p class="highlight">Método socrático con pistas escalonadas, anclado a los textos guía; guía sin dar la solución.</p>
+          <a class="repo-link" href="https://github.com/cardel/prompts-cursos" target="_blank" rel="noopener">Ver en GitHub &#8594;</a>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head"><span class="nombre">Fundamentos de Lenguajes de Programación</span><span class="lang">Racket</span></div>
+          <p class="desc">Progresión completa de intérpretes al estilo EOPL: desde la especificación léxica y gramatical hasta procedimientos, asignación por referencia, y chequeo e inferencia de tipos.</p>
+          <p class="highlight">Recurso de referencia para un curso de teoría de lenguajes, con notas de clase.</p>
+          <a class="repo-link" href="https://github.com/cardel/FLP" target="_blank" rel="noopener">Ver en GitHub &#8594;</a>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head"><span class="nombre">FADA — Análisis y diseño de algoritmos</span><span class="lang">Python</span></div>
+          <p class="desc">Temario completo de algoritmos con ejemplos ejecutables: complejidad, recurrencias, árboles de búsqueda, heaps, ordenamiento, divide y vencerás, y programación dinámica y voraz.</p>
+          <p class="highlight">Diapositivas, notas y código organizados por corte y semestre.</p>
+          <a class="repo-link" href="https://github.com/cardel/FADA" target="_blank" rel="noopener">Ver en GitHub &#8594;</a>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head"><span class="nombre">Matemáticas Discretas II</span><span class="lang">Python</span></div>
+          <p class="desc">Notas de clase y ejemplos en Python sobre conteo, combinatoria, relaciones de recurrencia, teoría de grafos, árboles y autómatas.</p>
+          <p class="highlight">Incluye código funcional para el algoritmo de Warshall, número cromático y máquinas de estados (networkx/numpy).</p>
+          <a class="repo-link" href="https://github.com/cardel/Discretas-II" target="_blank" rel="noopener">Ver en GitHub &#8594;</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>
+      <a href="index.html">Inicio</a> ·
+      <a href="https://github.com/cardel" target="_blank" rel="noopener">github.com/cardel</a>
+    </p>
+  </footer>
+</body>
+
+</html>
