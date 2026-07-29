@@ -5,166 +5,76 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carlos A. Delgado — Materiales</title>
-  <meta name="description" content="Portal de acceso a los materiales de Carlos A. Delgado: curso de Programación orientada a eventos y notas universitarias." />
+  <meta name="description" content="Materiales de docencia de Carlos Andrés Delgado Saavedra: curso de Programación orientada a eventos, notas universitarias, canal de YouTube y trayectoria profesional." />
   <link rel="icon" href="favicon.ico" />
-  <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #f4f6fb;
-      --fg: #1c2330;
-      --muted: #5b6473;
-      --card: #ffffff;
-      --card-border: #e2e6ee;
-      --accent: #2f6df6;
-      --shadow: 0 10px 30px rgba(20, 32, 60, 0.08);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f141c;
-        --fg: #e8ecf4;
-        --muted: #9aa4b6;
-        --card: #171e29;
-        --card-border: #263041;
-        --accent: #5b8bff;
-        --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      }
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1.25rem;
-      background: var(--bg);
-      color: var(--fg);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.5;
-    }
-
-    main {
-      width: 100%;
-      max-width: 640px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2.25rem;
-    }
-
-    h1 {
-      margin: 0 0 0.4rem;
-      font-size: clamp(1.6rem, 4vw, 2.1rem);
-      letter-spacing: -0.01em;
-    }
-
-    header p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .enlaces {
-      display: grid;
-      gap: 1rem;
-    }
-
-    a.tarjeta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.25rem 1.4rem;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.15s ease, border-color 0.15s ease;
-    }
-
-    a.tarjeta:hover,
-    a.tarjeta:focus-visible {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-      outline: none;
-    }
-
-    .icono {
-      flex: 0 0 auto;
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border-radius: 11px;
-      background: color-mix(in srgb, var(--accent) 14%, transparent);
-      font-size: 1.5rem;
-    }
-
-    .texto { flex: 1 1 auto; min-width: 0; }
-
-    .texto .titulo {
-      display: block;
-      font-weight: 600;
-      font-size: 1.08rem;
-    }
-
-    .texto .sub {
-      display: block;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .flecha {
-      flex: 0 0 auto;
-      color: var(--accent);
-      font-size: 1.3rem;
-    }
-
-    footer {
-      margin-top: 2.5rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <main>
-    <header>
-      <h1>Carlos A. Delgado</h1>
-      <p>Materiales de docencia</p>
-    </header>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="monogram" aria-hidden="true">CD</div>
+      <div>
+        <h1>Carlos Andrés Delgado</h1>
+        <p class="tagline">Candidato a Doctor en Ingeniería · Docente universitario en Sistemas y Computación · AWS Certified Cloud &amp; AI Practitioner</p>
+        <nav class="social" aria-label="Redes y perfiles">
+          <a href="https://linkedin.com/in/cardel" target="_blank" rel="noopener">in · LinkedIn</a>
+          <a href="https://github.com/cardel" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://orcid.org/0000-0002-1146-3057" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://www.youtube.com/@cardel87" target="_blank" rel="noopener">YouTube</a>
+          <a href="mailto:cardel87@gmail.com">Correo</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-    <nav class="enlaces">
-      <a class="tarjeta" href="https://cardel.github.io/orientadoeventos/">
-        <span class="icono" aria-hidden="true">&#9889;</span>
-        <span class="texto">
-          <span class="titulo">Programación orientada a eventos</span>
-          <span class="sub">Curso interactivo con actividades H5P</span>
-        </span>
-        <span class="flecha" aria-hidden="true">&#8594;</span>
-      </a>
+  <main class="wrap">
+    <section class="enlaces" aria-label="Materiales">
+      <div class="grid-cards">
 
-      <a class="tarjeta" href="https://cardel.github.io/notasUniversidad/">
-        <span class="icono" aria-hidden="true">&#128218;</span>
-        <span class="texto">
-          <span class="titulo">Notas universitarias</span>
-          <span class="sub">Apuntes de cursos organizados por semestre</span>
-        </span>
-        <span class="flecha" aria-hidden="true">&#8594;</span>
-      </a>
-    </nav>
+        <a class="tarjeta" href="https://cardel.github.io/orientadoeventos/">
+          <span class="icono" aria-hidden="true">&#9889;</span>
+          <span class="texto">
+            <span class="titulo">Programación orientada a eventos</span>
+            <span class="sub">Curso interactivo con actividades H5P, clase por clase</span>
+          </span>
+          <span class="flecha" aria-hidden="true">&#8594;</span>
+        </a>
 
-    <footer>
-      Pontificia Universidad Javeriana Cali &middot; Universidad del Valle
-    </footer>
+        <a class="tarjeta" href="https://cardel.github.io/notasUniversidad/">
+          <span class="icono" aria-hidden="true">&#128218;</span>
+          <span class="texto">
+            <span class="titulo">Notas universitarias</span>
+            <span class="sub">Apuntes de mis cursos, organizados por semestre</span>
+          </span>
+          <span class="flecha" aria-hidden="true">&#8594;</span>
+        </a>
+
+        <a class="tarjeta" href="trayectoria.html">
+          <span class="icono" aria-hidden="true">&#127891;</span>
+          <span class="texto">
+            <span class="titulo">Trayectoria profesional</span>
+            <span class="sub">Formación, experiencia docente, publicaciones y certificaciones</span>
+          </span>
+          <span class="flecha" aria-hidden="true">&#8594;</span>
+        </a>
+
+        <a class="tarjeta youtube" href="https://www.youtube.com/@cardel87" target="_blank" rel="noopener">
+          <span class="icono" aria-hidden="true">&#9654;</span>
+          <span class="texto">
+            <span class="titulo">Canal de YouTube <span class="badge">@cardel87</span></span>
+            <span class="sub">Clases grabadas de mis cursos: programación imperativa y funcional, teoría de lenguajes, matemáticas discretas y simulación computacional</span>
+          </span>
+          <span class="flecha" aria-hidden="true">&#8594;</span>
+        </a>
+
+      </div>
+    </section>
   </main>
+
+  <footer class="pie">
+    <p>Pontificia Universidad Javeriana Cali · Universidad del Valle · Universidad ICESI</p>
+  </footer>
 </body>
 
 </html>
