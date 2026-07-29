@@ -1,7 +1,12 @@
-# H5P Standalone hosted on GitHub Pages example site
+# cardel.github.io
 
-This repository contains an example H5P standalone static website hosted on GitHub Pages.
+Página de inicio en <https://cardel.github.io/>. Es un portal breve con
+enlaces a los materiales de docencia de Carlos A. Delgado:
 
-[How to Use H5P Standalone tutorial](https://www.animmouse.com/p/how-to-use-h5p-standalone/)
+- **Programación orientada a eventos** — <https://cardel.github.io/orientadoeventos/>
+  (repositorio [`cardel/orientadoeventos`](https://github.com/cardel/orientadoeventos)).
+- **Notas universitarias** — <https://cardel.github.io/notasUniversidad/>
+  (repositorio [`cardel/notasUniversidad`](https://github.com/cardel/notasUniversidad)).
 
-.nojekyll file in order to bypass Jekyll processing on GitHub Pages.
+El sitio es estático (`index.html`) y se despliega con GitHub Actions
+(`.github/workflows/static.yml`) en cada push a `main`.
