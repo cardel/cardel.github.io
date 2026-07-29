@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demos — Carlos A. Delgado</title>
+  <meta name="description" content="Demostraciones funcionales de proyectos: salidas y figuras reales generadas al compilar y ejecutar cada repositorio." />
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .demo { margin-bottom: 2.8rem; }
+    .demo-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .demo .cmd {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.86rem; background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.5rem 0.75rem; overflow-x: auto; white-space: nowrap;
+    }
+    .demo .cmd span { color: var(--accent); font-weight: 700; margin-right: 0.4rem; }
+    .demo .note { color: var(--muted); font-size: 0.92rem; }
+    pre.out {
+      background: #0f141c; color: #e8ecf4; border-radius: 10px; padding: 0.9rem 1rem;
+      overflow-x: auto; font-size: 0.8rem; line-height: 1.45; max-height: 460px;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    }
+    img.shot { display: block; max-width: 100%; border: 1px solid var(--border); border-radius: 10px; margin-top: 1rem; }
+    .svgs { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.8rem; }
+    .svgs img { width: 100%; background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 4px; }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <a class="volver" href="../proyectos.html">&#8592; Volver a Proyectos</a>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="monogram" aria-hidden="true">CD</div>
+      <div>
+        <h1>Demos</h1>
+        <p class="tagline">Salidas y figuras <strong>reales</strong>, generadas al compilar y ejecutar cada repositorio. No son capturas de adorno: es lo que imprime el programa.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="doc wrap">
+
+    <section class="demo" id="prisioneroevolutivo">
+      <div class="demo-head">
+        <h2>Prisionero evolutivo <span class="lang">C++</span></h2>
+        <a class="repo-link" href="https://github.com/cardel/prisioneroevolutivo" target="_blank" rel="noopener">Ver repo &#8594;</a>
+      </div>
+      <p class="desc">Algoritmo genético que evoluciona estrategias (autómatas de estados) para el dilema del prisionero iterado.</p>
+      <p class="cmd"><span>$</span> qmake &amp;&amp; make &amp;&amp; ./PrisioneroEvolutivo 500 30 50</p>
+      <p class="note">Evidencia de evolución tras 500 generaciones: la ganancia promedio pasa de <strong>3 156</strong> a <strong>≈152 millones</strong> y la del mejor de <strong>4 378</strong> a <strong>≈2 132 millones</strong>. Abajo, la población inicial, la final y la máquina de estados del jugador ganador.</p>
+      <pre class="out">¿Desea cambiar los valores específicos de la aplicación?[Y/N]
+¿Desea cambiar los valores de la matriz de pesos??[Y/N]
+
+--------------------------------------------------------------------
+----------------------   Población Inicial   -----------------------
+--------------------------------------------------------------------
+
+La ganancia promedio es: 3156.93
+La ganancia del mejor es: 4378
+
+Tabla de estados del mejor jugador:
++--------------------------------+
+|        Tabla de Estados        |
++--------------------------------+
+| EP 	 S 	 PEC 	 PET 	 |
+|                                |
+| 1 	 T 	 2 	 3	 |
+| 2 	 T 	 4 	 3	 |
+| 3 	 T 	 3 	 2	 |
+| 4 	 T 	 1 	 1	 |
++--------------------------------+
+
+--------------------------------------------------------------------
+----------------------   Población Final   -------------------------
+--------------------------------------------------------------------
+
+La ganancia promedio es: 1.52514e+08
+La ganancia del mejor es: 2132821224
+
+Tabla de estados del mejor jugador:
++--------------------------------+
+|        Tabla de Estados        |
++--------------------------------+
+| EP 	 S 	 PEC 	 PET 	 |
+|                                |
+| 1 	 C 	 14 	 35	 |
+| 2 	 C 	 2 	 29	 |
+| 3 	 C 	 4 	 34	 |
+| 4 	 T 	 19 	 2	 |
+| 5 	 C 	 18 	 7	 |
+| 6 	 C 	 8 	 12	 |
+| 7 	 T 	 35 	 36	 |
+| 8 	 T 	 28 	 19	 |
+| 9 	 T 	 9 	 6	 |
+| 10 	 C 	 35 	 35	 |
+| 11 	 T 	 27 	 29	 |
+| 12 	 C 	 33 	 26	 |
+| 13 	 C 	 25 	 23	 |
+| 14 	 T 	 36 	 35	 |
+| 15 	 T 	 31 	 15	 |
+| 16 	 T 	 2 	 25	 |
+| 17 	 T 	 15 	 7	 |
+| 18 	 T 	 31 	 11	 |
+| 19 	 T 	 34 	 10	 |
+| 20 	 C 	 23 	 25	 |
+| 21 	 C 	 21 	 28	 |
+| 22 	 C 	 6 	 13	 |
+| 23 	 C 	 10 	 7	 |
+| 24 	 T 	 16 	 35	 |
+| 25 	 C 	 19 	 30	 |
+| 26 	 C 	 25 	 36	 |
+| 27 	 C 	 36 	 20	 |
+| 28 	 C 	 32 	 26	 |
+| 29 	 C 	 24 	 15	 |
+| 30 	 C 	 28 	 26	 |
+| 31 	 T 	 30 	 17	 |
+| 32 	 C 	 28 	 27	 |
+| 33 	 T 	 10 	 6	 |
+| 34 	 C 	 3 	 18	 |
+| 35 	 T 	 24 	 5	 |
+| 36 	 C 	 8 	 9	 |
++--------------------------------+</pre>
+    </section>
+    <section class="demo" id="gestionEspectro">
+      <div class="demo-head">
+        <h2>Gestión del espectro <span class="lang">C++</span></h2>
+        <a class="repo-link" href="https://github.com/cardel/gestionEspectro" target="_blank" rel="noopener">Ver repo &#8594;</a>
+      </div>
+      <p class="desc">Componente de algoritmo genético del trabajo de grado: asignación del espectro radioeléctrico.</p>
+      <p class="cmd"><span>$</span> g++ -O2 genetico/genetico.cpp -o gen &amp;&amp; ./gen -i genetico/input -t 2 …</p>
+      <p class="note">Converge a una asignación factible: <strong>violations = 0</strong>, costo total 462. El programa emite un XML con la solución (canal por canal por operador); se muestra el encabezado.</p>
+      <pre class="out">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;solutions authorXML=&quot;Carlos Andrés Delgado Saavedra&quot; &gt;
+	&lt;head solution=&quot;noOptima&quot;&gt;
+		&lt;geograficAssignationType&gt;0&lt;/geograficAssignationType&gt;
+		&lt;geograficAssignationID&gt;0&lt;/geograficAssignationID&gt;
+		&lt;frequencyBand&gt;1&lt;/frequencyBand&gt;
+		&lt;frequencyRank&gt;1&lt;/frequencyRank&gt;
+		&lt;channelsNumber&gt;12&lt;/channelsNumber&gt;
+		&lt;operatorsNumber&gt;5&lt;/operatorsNumber&gt;
+		&lt;channelSeparation&gt;1&lt;/channelSeparation&gt;
+		&lt;numberOperatorPerChannel&gt;1&lt;/numberOperatorPerChannel&gt;
+		&lt;considerTop&gt;true&lt;/considerTop&gt;
+		&lt;staticAssignation&gt;true&lt;/staticAssignation&gt;
+		&lt;considerSeparation&gt;true&lt;/considerSeparation&gt;
+		&lt;numSolutions&gt;3&lt;/numSolutions&gt;
+		&lt;executionTime&gt;2.000005&lt;/executionTime&gt;
+	&lt;/head&gt;
+	&lt;solution id=&quot;0&quot;&gt;
+		&lt;costs&gt;
+			&lt;violations&gt;0&lt;/violations&gt;
+			&lt;blocksNumber&gt;7&lt;/blocksNumber&gt;
+			&lt;difChannelNumberMaxBlockFree&gt;1&lt;/difChannelNumberMaxBlockFree&gt;
+			&lt;channelNumberUseless&gt;6&lt;/channelNumberUseless&gt;
+			&lt;totalCost&gt;462&lt;/totalCost&gt;
+		&lt;/costs&gt;
+		&lt;report&gt;
+			&lt;operator name=&quot;2&quot;&gt;
+				&lt;channels&gt;
+					&lt;channel ID=&quot;0&quot;&gt; 1 &lt;/channel&gt;
+					&lt;channel ID=&quot;1&quot;&gt; 0 &lt;/channel&gt;
+					&lt;channel ID=&quot;2&quot;&gt; 0 &lt;/channel&gt;
+					&lt;channel ID=&quot;3&quot;&gt; 0 &lt;/channel&gt;
+					&lt;channel ID=&quot;4&quot;&gt; 0 &lt;/channel&gt;
+					&lt;channel ID=&quot;5&quot;&gt; 0 &lt;/channel&gt;
+					&lt;channel ID=&quot;6&quot;&gt; 0 &lt;/channel&gt;
+					&lt;channel ID=&quot;7&quot;&gt; 0 &lt;/channel&gt;
+					&lt;channel ID=&quot;8&quot;&gt; 0 &lt;/channel&gt;
+					&lt;channel ID=&quot;9&quot;&gt; 0 &lt;/channel&gt;
+					&lt;channel ID=&quot;10&quot;&gt; 0 &lt;/channel&gt;
+					&lt;channel ID=&quot;11&quot;&gt; 0 &lt;/channel&gt;
+… (recortado)</pre>
+    </section>
+    <section class="demo" id="FLP">
+      <div class="demo-head">
+        <h2>Fundamentos de Lenguajes de Programación <span class="lang">Racket</span></h2>
+        <a class="repo-link" href="https://github.com/cardel/FLP" target="_blank" rel="noopener">Ver repo &#8594;</a>
+      </div>
+      <p class="desc">Intérpretes al estilo EOPL. Se evalúan expresiones reales del mini-lenguaje con el intérprete.</p>
+      <p class="cmd"><span>$</span> racket Interpretador…​.rkt   (expresiones por stdin)</p>
+      <p class="note">Condicional → 100, aplicación de procedimiento (7·7) → 49, y factorial recursivo (fact 5) → 120. Resultados reales evaluados por el intérprete.</p>
+      <pre class="out">; Intérprete del mini-lenguaje (EOPL, Racket) — evaluación real
+&gt; si opera &gt; [5,3] entonces 100 sino 200
+100
+
+&gt; local f = proc (n) opera * [n,n] en (f 7)
+49
+
+&gt; localrec fact(n) = si opera &gt; [n,1]
+                      entonces opera * [n,(fact opera - [n,1])]
+                      sino 1
+    en (fact 5)
+120</pre>
+    </section>
+    <section class="demo" id="FADA">
+      <div class="demo-head">
+        <h2>FADA — Análisis y diseño de algoritmos <span class="lang">Python</span></h2>
+        <a class="repo-link" href="https://github.com/cardel/FADA" target="_blank" rel="noopener">Ver repo &#8594;</a>
+      </div>
+      <p class="desc">Ejemplos ejecutables del curso: sumatorias, complejidad e InsertionSort.</p>
+      <p class="cmd"><span>$</span> python3 Sumatoria.py · 1-InsertionSort.py · Recurrencias/Ejemplo1.py</p>
+      <p class="note">El conteo empírico de operaciones de InsertionSort coincide con las cotas mejor/peor caso; la suma empírica coincide con la fórmula cerrada.</p>
+      <pre class="out">### $ python3 Sumatoria.py
+2025394308 2025394308
+
+### $ python3 1-InsertionSort.py
+[0, 1, 2, 3, 7, 8, 9, 12]
+Tamaño  100
+Mejor caso  496 496
+Peor caso  15346 15346.0
+Caso promedio  7968.64 7771.5
+*****************************
+Tamaño  200
+Mejor caso  996 996
+Peor caso  60696 60696.0
+Caso promedio  30850.23 30546.5
+*****************************
+Tamaño  300
+Mejor caso  1496 1496
+Peor caso  136046 136046.0
+Caso promedio  68839.7 68321.5
+*****************************
+Tamaño  500
+Mejor caso  2496 2496
+Peor caso  376746 376746.0
+Caso promedio  188559.84 188871.5
+*****************************
+Tamaño  800
+Mejor caso  3996 3996
+Peor caso  962796 962796.0
+Caso promedio  484197.69 482196.5
+*****************************
+
+### $ python3 Ejemplo1.py
+cte= 1 n= 1 val: 1 1.0
+cte= 1 n= 4 val: 7 7.0
+cte= 1 n= 16 val: 37.0 37.0
+cte= 1 n= 64 val: 175.0 175.0
+cte= 1 n= 256 val: 781.0 781.0
+cte= 1 n= 1024 val: 3367.0 3367.0
+cte= 1 n= 4096 val: 14197.0 14197.0
+cte= 1 n= 16384 val: 58975.0 58975.0
+… (recortado)</pre>
+    </section>
+    <section class="demo" id="Discretas-II">
+      <div class="demo-head">
+        <h2>Matemáticas Discretas II <span class="lang">Python</span></h2>
+        <a class="repo-link" href="https://github.com/cardel/Discretas-II" target="_blank" rel="noopener">Ver repo &#8594;</a>
+      </div>
+      <p class="desc">Número cromático, planaridad y dibujo de grafos con networkx/numpy.</p>
+      <p class="cmd"><span>$</span> python3 CromaticoCicloComplemento.py · PlanoRueda.py  (MPLBACKEND=Agg)</p>
+      <p class="note">Número cromático de ciclos y su complemento (columna final <code>True</code> = coincide con lo esperado), y un grafo renderizado con networkx:</p>
+      <pre class="out">### $ python3 CromaticoCicloComplemento.py
+3 1 1 True
+4 2 2 True
+5 3 3 True
+6 3 3 True
+7 4 4 True
+8 4 4 True
+9 5 5 True
+10 5 5 True
+11 6 6 True
+12 6 6 True
+13 7 7 True
+14 7 7 True
+15 8 8 True
+16 8 8 True
+17 9 9 True
+18 9 9 True
+19 10 10 True
+20 10 10 True
+21 11 11 True
+22 11 11 True
+23 12 12 True
+24 12 12 True
+25 13 13 True
+26 13 13 True
+27 14 14 True
+… (recortado)</pre><img class="shot" src="assets/discretas-grafo.png" alt="Grafo dibujado con networkx" />
+    </section>
+    <section class="demo" id="lamFria">
+      <div class="demo-head">
+        <h2>LAMFRIA — multifractalidad en redes <span class="lang">Python</span></h2>
+        <a class="repo-link" href="https://github.com/cardel/lamFria" target="_blank" rel="noopener">Ver repo &#8594;</a>
+      </div>
+      <p class="desc">Figuras científicas del proyecto: R-index frente al diferencial multifractal ΔD_q bajo ataques por azar, por grado y por centralidad.</p>
+      <p class="cmd"><span>$</span> bash output/combinedgraphics/script.sh   (matplotlib)</p>
+      <p class="note">Las seis figuras del artículo, regeneradas desde los datos versionados en el repositorio (redes scale-free, small-world y aleatorias):</p>
+      <div class="svgs"><img src="assets/lamfria-1.svg" alt="Figura 1 de robustez multifractal" /><img src="assets/lamfria-2.svg" alt="Figura 2 de robustez multifractal" /><img src="assets/lamfria-3.svg" alt="Figura 3 de robustez multifractal" /><img src="assets/lamfria-4.svg" alt="Figura 4 de robustez multifractal" /><img src="assets/lamfria-5.svg" alt="Figura 5 de robustez multifractal" /><img src="assets/lamfria-6.svg" alt="Figura 6 de robustez multifractal" /></div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p><a href="../index.html">Inicio</a> · <a href="../proyectos.html">Proyectos</a> · <a href="https://github.com/cardel" target="_blank" rel="noopener">github.com/cardel</a></p>
+  </footer>
+</body>
+
+</html>

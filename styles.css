@@ -443,6 +443,29 @@ main.doc { padding: 2rem 0 3rem; }
 }
 .proj .repo-link:hover { text-decoration: underline; }
 
+.card-links {
+  margin-top: auto;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.card-links .repo-link { margin-top: 0; }
+
+.demo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+}
+.demo-link:hover { filter: brightness(1.08); }
+
 /* ------------------------------ Footer ---------------------------------- */
 
 footer.pie {

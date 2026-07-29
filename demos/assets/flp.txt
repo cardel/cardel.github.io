@@ -1,0 +1,12 @@
+; Intérprete del mini-lenguaje (EOPL, Racket) — evaluación real
+> si opera > [5,3] entonces 100 sino 200
+100
+
+> local f = proc (n) opera * [n,n] en (f 7)
+49
+
+> localrec fact(n) = si opera > [n,1]
+                      entonces opera * [n,(fact opera - [n,1])]
+                      sino 1
+    en (fact 5)
+120

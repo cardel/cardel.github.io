@@ -1,0 +1,124 @@
+### $ python3 CromaticoCicloComplemento.py
+3 1 1 True
+4 2 2 True
+5 3 3 True
+6 3 3 True
+7 4 4 True
+8 4 4 True
+9 5 5 True
+10 5 5 True
+11 6 6 True
+12 6 6 True
+13 7 7 True
+14 7 7 True
+15 8 8 True
+16 8 8 True
+17 9 9 True
+18 9 9 True
+19 10 10 True
+20 10 10 True
+21 11 11 True
+22 11 11 True
+23 12 12 True
+24 12 12 True
+25 13 13 True
+26 13 13 True
+27 14 14 True
+28 14 14 True
+29 15 15 True
+30 15 15 True
+31 16 16 True
+32 16 16 True
+33 17 17 True
+34 17 17 True
+35 18 18 True
+36 18 18 True
+37 19 19 True
+38 19 19 True
+39 20 20 True
+40 20 20 True
+41 21 21 True
+42 21 21 True
+43 22 22 True
+44 22 22 True
+45 23 23 True
+46 23 23 True
+47 24 24 True
+48 24 24 True
+49 25 25 True
+50 25 25 True
+51 26 26 True
+52 26 26 True
+53 27 27 True
+54 27 27 True
+55 28 28 True
+56 28 28 True
+57 29 29 True
+58 29 29 True
+59 30 30 True
+60 30 30 True
+61 31 31 True
+62 31 31 True
+63 32 32 True
+64 32 32 True
+65 33 33 True
+66 33 33 True
+67 34 34 True
+68 34 34 True
+69 35 35 True
+70 35 35 True
+71 36 36 True
+72 36 36 True
+73 37 37 True
+74 37 37 True
+75 38 38 True
+76 38 38 True
+77 39 39 True
+78 39 39 True
+79 40 40 True
+80 40 40 True
+81 41 41 True
+82 41 41 True
+83 42 42 True
+84 42 42 True
+85 43 43 True
+86 43 43 True
+87 44 44 True
+88 44 44 True
+89 45 45 True
+90 45 45 True
+91 46 46 True
+92 46 46 True
+93 47 47 True
+94 47 47 True
+95 48 48 True
+96 48 48 True
+97 49 49 True
+98 49 49 True
+99 50 50 True
+
+### $ python3 PlanoRueda.py
+True
+False
+
+### $ python3 Ejemplo1.py
+1 2 2
+2 3 3
+3 5 5
+4 8 8
+5 13 13
+6 21 21
+7 34 34
+8 55 55
+9 89 89
+10 144 144
+11 233 233
+12 377 377
+13 610 610
+14 987 987
+15 1597 1597
+16 2584 2584
+17 4181 4181
+18 6765 6765
+19 10946 10946
+
