@@ -1,0 +1,347 @@
+ProyectoTIS - gestion de fruta multi-tenant
+Django 2.0.8 + django-tenants 2.0.0 + PostgreSQL 9.6.24 + Python 3.6.15
+Corrida completa sin Docker: cluster PostgreSQL propio en el puerto 5432 e
+interprete Python 3.6.15 compilado desde fuente. Todo lo que sigue es la
+salida literal de esa corrida.
+
+========================================================================
+  1. Versiones realmente instaladas
+========================================================================
+
+$ psql -U tendencias -d tendencias -c "SELECT version();"
+                                                  version                                                  
+-----------------------------------------------------------------------------------------------------------
+ PostgreSQL 9.6.24 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23), 64-bit
+(1 row)
+
+
+$ python -c "import django, psycopg2, sys; ..."
+Python           3.6.15
+Django           2.0.8
+django-tenants   2.0.0
+psycopg2         2.7.4
+Pillow           4.0.0
+django-bootstrap3 9.1.0
+
+========================================================================
+  2. makemigrations + migrate_schemas --shared (esquema publico)
+========================================================================
+
+$ python manage.py makemigrations
+No changes detected
+
+$ python manage.py migrate_schemas --shared
+=== Starting migration
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, gestionfruta, productortenant, sessions
+Running migrations:
+  Applying contenttypes.0001_initial...
+ OK
+  Applying auth.0001_initial...
+ OK
+  Applying admin.0001_initial...
+ OK
+  Applying admin.0002_logentry_remove_auto_add...
+ OK
+  Applying contenttypes.0002_remove_content_type_name...
+ OK
+  Applying auth.0002_alter_permission_name_max_length...
+ OK
+  Applying auth.0003_alter_user_email_max_length...
+ OK
+  Applying auth.0004_alter_user_username_opts...
+ OK
+  Applying auth.0005_alter_user_last_login_null...
+ OK
+  Applying auth.0006_require_contenttypes_0002...
+ OK
+  Applying auth.0007_alter_validators_add_error_messages...
+ OK
+  Applying auth.0008_alter_user_username_max_length...
+ OK
+  Applying auth.0009_alter_user_last_name_max_length...
+ OK
+  Applying gestionfruta.0001_initial...
+ OK
+  Applying productortenant.0001_initial...
+ OK
+  Applying sessions.0001_initial...
+ OK
+
+========================================================================
+  3. Un Productor guardado = un esquema PostgreSQL creado
+========================================================================
+
+$ python manage.py shell   < script de creacion de tenants
+(cada bloque de migracion pertenece al tenant que se nombra justo despues;
+ el tenant 'public' no dispara migracion porque su esquema ya existe)
+tenant creado: schema=public               dominio=localhost                productor=Public
+=== Starting migration
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, gestionfruta, productortenant, sessions
+Running migrations:
+  Applying contenttypes.0001_initial...
+ OK
+  Applying auth.0001_initial...
+ OK
+  Applying admin.0001_initial...
+ OK
+  Applying admin.0002_logentry_remove_auto_add...
+ OK
+  Applying contenttypes.0002_remove_content_type_name...
+ OK
+  Applying auth.0002_alter_permission_name_max_length...
+ OK
+  Applying auth.0003_alter_user_email_max_length...
+ OK
+  Applying auth.0004_alter_user_username_opts...
+ OK
+  Applying auth.0005_alter_user_last_login_null...
+ OK
+  Applying auth.0006_require_contenttypes_0002...
+ OK
+  Applying auth.0007_alter_validators_add_error_messages...
+ OK
+  Applying auth.0008_alter_user_username_max_length...
+ OK
+  Applying auth.0009_alter_user_last_name_max_length...
+ OK
+  Applying gestionfruta.0001_initial...
+ OK
+  Applying productortenant.0001_initial...
+ OK
+  Applying sessions.0001_initial...
+ OK
+tenant creado: schema=finca_la_esperanza   dominio=esperanza.localhost      productor=Finca La Esperanza
+=== Starting migration
+  [16 migraciones "Applying ... OK", identicas a las del primer esquema; elididas aqui]
+tenant creado: schema=finca_el_mirador     dominio=mirador.localhost        productor=Finca El Mirador
+=== Starting migration
+  [16 migraciones "Applying ... OK", identicas a las del primer esquema; elididas aqui]
+tenant creado: schema=finca_villa_carmen   dominio=villacarmen.localhost    productor=Finca Villa Carmen
+
+productores en el esquema publico:
+  id=1   schema=public               Public
+  id=2   schema=finca_la_esperanza   Finca La Esperanza
+  id=3   schema=finca_el_mirador     Finca El Mirador
+  id=4   schema=finca_villa_carmen   Finca Villa Carmen
+
+========================================================================
+  4. La prueba: un esquema por productor
+========================================================================
+
+$ psql -U tendencias -d tendencias -c "\dn"
+         List of schemas
+        Name        |   Owner    
+--------------------+------------
+ finca_el_mirador   | tendencias
+ finca_la_esperanza | tendencias
+ finca_villa_carmen | tendencias
+ public             | tendencias
+(4 rows)
+
+$ psql ... -c "SELECT nspname ... FROM pg_namespace ..."
+      esquema       | tablas 
+--------------------+--------
+ finca_el_mirador   |     13
+ finca_la_esperanza |     13
+ finca_villa_carmen |     13
+ public             |     14
+(4 rows)
+
+========================================================================
+  5. Las tablas de gestionfruta viven en los esquemas, no en public
+========================================================================
+
+$ psql ... tablas gestionfruta_% por esquema
+      esquema       |         tabla         
+--------------------+-----------------------
+ finca_el_mirador   | gestionfruta_contacto
+ finca_el_mirador   | gestionfruta_finca
+ finca_el_mirador   | gestionfruta_fruta
+ finca_la_esperanza | gestionfruta_contacto
+ finca_la_esperanza | gestionfruta_finca
+ finca_la_esperanza | gestionfruta_fruta
+ finca_villa_carmen | gestionfruta_contacto
+ finca_villa_carmen | gestionfruta_finca
+ finca_villa_carmen | gestionfruta_fruta
+(9 rows)
+
+$ psql ... contenido completo del esquema finca_la_esperanza
+           tabla            
+----------------------------
+ auth_group
+ auth_group_permissions
+ auth_permission
+ auth_user
+ auth_user_groups
+ auth_user_user_permissions
+ django_admin_log
+ django_content_type
+ django_migrations
+ django_session
+ gestionfruta_contacto
+ gestionfruta_finca
+ gestionfruta_fruta
+(13 rows)
+
+$ psql ... contenido completo del esquema public
+            tabla             
+------------------------------
+ auth_group
+ auth_group_permissions
+ auth_permission
+ auth_user
+ auth_user_groups
+ auth_user_user_permissions
+ django_admin_log
+ django_content_type
+ django_migrations
+ django_session
+ productortenant_departamento
+ productortenant_domain
+ productortenant_municipio
+ productortenant_productor
+(14 rows)
+
+========================================================================
+  6. Altas por el ORM apuntando a cada tenant
+========================================================================
+
+$ python manage.py shell   < script de carga de fincas y frutas
+conexion apuntando a: finca_la_esperanza
+conexion apuntando a: finca_el_mirador
+
+--- ORM sobre el esquema finca_la_esperanza
+   fruta: Lulo         La Selva       1800 kg/mes  1450 msnm
+   fruta: Mora         Castilla        900 kg/mes  1450 msnm
+   finca: La Esperanza   Valle del Cauca / Sevilla
+
+--- ORM sobre el esquema finca_el_mirador
+   fruta: Granadilla   Colombiana     2400 kg/mes  1520 msnm
+   finca: El Mirador     Quindio / Circasia
+
+========================================================================
+  7. Las mismas filas vistas por SQL, esquema por esquema
+========================================================================
+
+$ psql ... SELECT * FROM finca_la_esperanza.gestionfruta_fruta
+ id | nombre | variedad | produccionmes | msnm 
+----+--------+----------+---------------+------
+  1 | Lulo   | La Selva |          1800 | 1450
+  2 | Mora   | Castilla |           900 | 1450
+(2 rows)
+
+$ psql ... SELECT * FROM finca_el_mirador.gestionfruta_fruta
+ id |   nombre   |  variedad  | produccionmes | msnm 
+----+------------+------------+---------------+------
+  1 | Granadilla | Colombiana |          2400 | 1520
+(1 row)
+
+$ psql ... SELECT count(*) FROM finca_villa_carmen.gestionfruta_fruta   (tenant sin datos)
+ filas 
+-------
+     0
+(1 row)
+
+$ psql ... SELECT count(*) FROM public.gestionfruta_fruta   (esa tabla no existe en public)
+ERROR:  relation "public.gestionfruta_fruta" does not exist
+LINE 1: SELECT count(*) AS filas FROM public.gestionfruta_fruta;
+                                      ^
+
+========================================================================
+  8. El servidor de desarrollo
+========================================================================
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 30, 2026 - 17:06:18
+Django version 2.0.8, using settings 'proyectotis.settings'
+Starting development server at http://localhost:8080/
+Quit the server with CONTROL-C.
+Domain object (1)
+[30/Jul/2026 17:06:25] "GET / HTTP/1.1" 200 3336
+Domain object (1)
+[30/Jul/2026 17:06:25] "GET / HTTP/1.1" 200 3336
+Domain object (2)
+[30/Jul/2026 17:06:25] "GET /fruta/ HTTP/1.1" 200 4536
+Domain object (2)
+[30/Jul/2026 17:06:25] "GET /fruta/ HTTP/1.1" 200 4536
+Domain object (3)
+[30/Jul/2026 17:06:25] "GET /fruta/ HTTP/1.1" 200 4159
+Domain object (3)
+[30/Jul/2026 17:06:25] "GET /fruta/ HTTP/1.1" 200 4159
+Domain object (4)
+[30/Jul/2026 17:06:25] "GET /fruta/ HTTP/1.1" 200 3235
+Domain object (4)
+[30/Jul/2026 17:06:25] "GET /fruta/ HTTP/1.1" 200 3235
+Not Found: /
+[30/Jul/2026 17:06:25] "GET / HTTP/1.1" 404 1692
+
+========================================================================
+  9. Mismo servidor, misma URL, datos distintos por dominio
+========================================================================
+
+$ curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/
+200
+
+$ curl -s http://localhost:8080/ | grep -E "<title>|<h1>|<h2>"
+  <title>Asofrutas, sitio Web</title>
+<h1>Asofrutas</h1>
+
+$ curl -s -o /dev/null -w "%{http_code}" http://esperanza.localhost:8080/fruta/
+200
+$ curl -s http://esperanza.localhost:8080/fruta/ | sed -n "/<tbody>/,/<\/tbody>/p"
+    <tbody>
+    <tr>
+        <td>Lulo</td>
+        <td>La Selva</td>
+        <td>2.5 ha</td>
+        <td>1800</td>
+        <td>Ladera</td>
+        <td>1450</td>
+        <td>19</td>
+         <td>departamento</td>
+         <td>municipio</td>
+    </tr>
+    <tr>
+        <td>Mora</td>
+        <td>Castilla</td>
+        <td>1.2 ha</td>
+        <td>900</td>
+        <td>Ladera</td>
+        <td>1450</td>
+        <td>19</td>
+         <td>departamento</td>
+         <td>municipio</td>
+    </tr>
+    </tbody>
+
+$ curl -s -o /dev/null -w "%{http_code}" http://mirador.localhost:8080/fruta/
+200
+$ curl -s http://mirador.localhost:8080/fruta/ | sed -n "/<tbody>/,/<\/tbody>/p"
+    <tbody>
+    <tr>
+        <td>Granadilla</td>
+        <td>Colombiana</td>
+        <td>3.0 ha</td>
+        <td>2400</td>
+        <td>Plano</td>
+        <td>1520</td>
+        <td>21</td>
+         <td>departamento</td>
+         <td>municipio</td>
+    </tr>
+    </tbody>
+
+$ curl -s -o /dev/null -w "%{http_code}" http://villacarmen.localhost:8080/fruta/   (tenant sin datos)
+200
+$ curl -s http://villacarmen.localhost:8080/fruta/ | grep -A2 "Lista de frutas"
+<h3>Lista de frutas</h3>
+
+<p>Nos encontramos construyendo nuestro sitio, lamentamos las molestias</p>
+
+
+$ curl -s -o /dev/null -w "%{http_code}" http://desconocida.localhost:8080/   (dominio no registrado)
+404

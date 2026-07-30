@@ -127,6 +127,334 @@ Tabla de estados del mejor jugador:
 | 36 	 C 	 8 	 9	 |
 +--------------------------------+</pre>
     </section>
+    <section class="demo" id="proyectotis">
+      <div class="demo-head">
+        <h2>ProyectoTIS <span class="lang">Python &middot; Django</span></h2>
+        <a class="repo-link" href="https://github.com/cardel/proyectotis" target="_blank" rel="noopener">Ver repo &#8594;</a>
+      </div>
+      <p class="desc">Aplicaci&oacute;n web multi-tenant de gesti&oacute;n de fruta: <code>django-tenants</code> le da a cada productor su propio esquema dentro de una sola base de datos PostgreSQL.</p>
+      <p class="cmd"><span>$</span> python manage.py migrate_schemas --shared &middot; python manage.py runserver localhost:8080</p>
+      <p class="note">Levantado sin Docker sobre las versiones que pide el Readme: PostgreSQL 9.6.24 y Python 3.6.15 compilado desde fuente. Guardar un <code>Productor</code> con esquema propio dispara <strong>16 migraciones</strong> y crea su esquema; el tenant <code>public</code> reutiliza el que ya existe. Tres fincas dejan cuatro esquemas, <code>public</code> con <strong>14 tablas</strong> y uno privado por finca con <strong>13</strong> cada uno. El aislamiento se ve al final: <code>public.gestionfruta_fruta</code> <strong>no existe</strong>, y la misma URL <code>/fruta/</code> devuelve <strong>2 filas</strong> en <code>esperanza.localhost</code>, <strong>1</strong> en <code>mirador.localhost</code> y ninguna en <code>villacarmen.localhost</code>; un dominio sin registrar responde <strong>404</strong>.</p>
+      <pre class="out">ProyectoTIS - gestion de fruta multi-tenant
+Django 2.0.8 + django-tenants 2.0.0 + PostgreSQL 9.6.24 + Python 3.6.15
+Corrida completa sin Docker: cluster PostgreSQL propio en el puerto 5432 e
+interprete Python 3.6.15 compilado desde fuente. Todo lo que sigue es la
+salida literal de esa corrida.
+
+========================================================================
+  1. Versiones realmente instaladas
+========================================================================
+
+$ psql -U tendencias -d tendencias -c "SELECT version();"
+                                                  version                                                  
+-----------------------------------------------------------------------------------------------------------
+ PostgreSQL 9.6.24 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23), 64-bit
+(1 row)
+
+
+$ python -c "import django, psycopg2, sys; ..."
+Python           3.6.15
+Django           2.0.8
+django-tenants   2.0.0
+psycopg2         2.7.4
+Pillow           4.0.0
+django-bootstrap3 9.1.0
+
+========================================================================
+  2. makemigrations + migrate_schemas --shared (esquema publico)
+========================================================================
+
+$ python manage.py makemigrations
+No changes detected
+
+$ python manage.py migrate_schemas --shared
+=== Starting migration
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, gestionfruta, productortenant, sessions
+Running migrations:
+  … (recortado: 16 migraciones, todas OK)
+
+========================================================================
+  3. Un Productor guardado = un esquema PostgreSQL creado
+========================================================================
+
+$ python manage.py shell   &lt; script de creacion de tenants
+(cada bloque de migracion pertenece al tenant que se nombra justo despues;
+ el tenant 'public' no dispara migracion porque su esquema ya existe)
+tenant creado: schema=public               dominio=localhost                productor=Public
+=== Starting migration
+  [16 migraciones "Applying ... OK"; elididas aqui]
+tenant creado: schema=finca_la_esperanza   dominio=esperanza.localhost      productor=Finca La Esperanza
+=== Starting migration
+  [16 migraciones "Applying ... OK", identicas a las del primer esquema; elididas aqui]
+tenant creado: schema=finca_el_mirador     dominio=mirador.localhost        productor=Finca El Mirador
+=== Starting migration
+  [16 migraciones "Applying ... OK", identicas a las del primer esquema; elididas aqui]
+tenant creado: schema=finca_villa_carmen   dominio=villacarmen.localhost    productor=Finca Villa Carmen
+
+productores en el esquema publico:
+  id=1   schema=public               Public
+  id=2   schema=finca_la_esperanza   Finca La Esperanza
+  id=3   schema=finca_el_mirador     Finca El Mirador
+  id=4   schema=finca_villa_carmen   Finca Villa Carmen
+
+========================================================================
+  4. La prueba: un esquema por productor
+========================================================================
+
+$ psql -U tendencias -d tendencias -c "\dn"
+         List of schemas
+        Name        |   Owner    
+--------------------+------------
+ finca_el_mirador   | tendencias
+ finca_la_esperanza | tendencias
+ finca_villa_carmen | tendencias
+ public             | tendencias
+(4 rows)
+
+$ psql ... -c "SELECT nspname ... FROM pg_namespace ..."
+      esquema       | tablas 
+--------------------+--------
+ finca_el_mirador   |     13
+ finca_la_esperanza |     13
+ finca_villa_carmen |     13
+ public             |     14
+(4 rows)
+
+========================================================================
+  7. Las mismas filas vistas por SQL, esquema por esquema
+========================================================================
+
+$ psql ... SELECT * FROM finca_la_esperanza.gestionfruta_fruta
+ id | nombre | variedad | produccionmes | msnm 
+----+--------+----------+---------------+------
+  1 | Lulo   | La Selva |          1800 | 1450
+  2 | Mora   | Castilla |           900 | 1450
+(2 rows)
+
+$ psql ... SELECT * FROM finca_el_mirador.gestionfruta_fruta
+ id |   nombre   |  variedad  | produccionmes | msnm 
+----+------------+------------+---------------+------
+  1 | Granadilla | Colombiana |          2400 | 1520
+(1 row)
+
+$ psql ... SELECT count(*) FROM finca_villa_carmen.gestionfruta_fruta   (tenant sin datos)
+ filas 
+-------
+     0
+(1 row)
+
+$ psql ... SELECT count(*) FROM public.gestionfruta_fruta   (esa tabla no existe en public)
+ERROR:  relation "public.gestionfruta_fruta" does not exist
+LINE 1: SELECT count(*) AS filas FROM public.gestionfruta_fruta;
+                                      ^
+
+========================================================================
+  9. Mismo servidor, misma URL, datos distintos por dominio
+========================================================================
+
+$ curl -s -o /dev/null -w "%{http_code}" http://esperanza.localhost:8080/fruta/
+200
+$ curl -s http://esperanza.localhost:8080/fruta/ | sed -n "/&lt;tbody&gt;/,/&lt;\/tbody&gt;/p"
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Lulo&lt;/td&gt;
+        &lt;td&gt;La Selva&lt;/td&gt;
+        &lt;td&gt;2.5 ha&lt;/td&gt;
+        &lt;td&gt;1800&lt;/td&gt;
+        &lt;td&gt;Ladera&lt;/td&gt;
+        &lt;td&gt;1450&lt;/td&gt;
+        &lt;td&gt;19&lt;/td&gt;
+         &lt;td&gt;departamento&lt;/td&gt;
+         &lt;td&gt;municipio&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Mora&lt;/td&gt;
+        &lt;td&gt;Castilla&lt;/td&gt;
+        &lt;td&gt;1.2 ha&lt;/td&gt;
+        &lt;td&gt;900&lt;/td&gt;
+        &lt;td&gt;Ladera&lt;/td&gt;
+        &lt;td&gt;1450&lt;/td&gt;
+        &lt;td&gt;19&lt;/td&gt;
+         &lt;td&gt;departamento&lt;/td&gt;
+         &lt;td&gt;municipio&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+$ curl -s -o /dev/null -w "%{http_code}" http://mirador.localhost:8080/fruta/
+200
+$ curl -s http://mirador.localhost:8080/fruta/ | sed -n "/&lt;tbody&gt;/,/&lt;\/tbody&gt;/p"
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Granadilla&lt;/td&gt;
+        &lt;td&gt;Colombiana&lt;/td&gt;
+        &lt;td&gt;3.0 ha&lt;/td&gt;
+        &lt;td&gt;2400&lt;/td&gt;
+        &lt;td&gt;Plano&lt;/td&gt;
+        &lt;td&gt;1520&lt;/td&gt;
+        &lt;td&gt;21&lt;/td&gt;
+         &lt;td&gt;departamento&lt;/td&gt;
+         &lt;td&gt;municipio&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+$ curl -s -o /dev/null -w "%{http_code}" http://villacarmen.localhost:8080/fruta/   (tenant sin datos)
+200
+$ curl -s http://villacarmen.localhost:8080/fruta/ | grep -A2 "Lista de frutas"
+&lt;h3&gt;Lista de frutas&lt;/h3&gt;
+
+&lt;p&gt;Nos encontramos construyendo nuestro sitio, lamentamos las molestias&lt;/p&gt;
+
+
+$ curl -s -o /dev/null -w "%{http_code}" http://desconocida.localhost:8080/   (dominio no registrado)
+404</pre><img class="shot" src="assets/proyectotis-esquemas.svg" alt="Dominio atendido, esquema de PostgreSQL, n&uacute;mero de tablas y filas de gestionfruta_fruta para cada productor" />
+    </section>
+    <section class="demo" id="electivasprofesionales">
+      <div class="demo-head">
+        <h2>Redes neuronales desplegables <span class="lang">Python &middot; Flask &middot; Keras</span></h2>
+        <a class="repo-link" href="https://github.com/cardel/electivasprofesionales" target="_blank" rel="noopener">Ver repo &#8594;</a>
+      </div>
+      <p class="desc">API REST en Flask que sirve el modelo Keras versionado en el repositorio: se env&iacute;a una imagen por <code>POST /predict</code> y responde con la clase y el vector de probabilidades.</p>
+      <p class="cmd"><span>$</span> python -m flask run --host=0.0.0.0 &middot; curl -s -F imagen=@digito_0.png http://localhost:5000/predict</p>
+      <p class="note">Reproducido sin Docker: CPython 3.11.15 y las <strong>70 dependencias</strong> de <code>requirements.txt</code> instaladas sin tocar una sola versi&oacute;n, TensorFlow 2.15.0 y Keras 2.15.0 entre ellas. El servicio arranca con el mismo comando de <code>entrypoint.sh</code> y responde: los tres <em>endpoints</em> devuelven 200 y la inferencia toma 144 ms la primera vez y 20 ms la siguiente. Lo interesante es <em>qu&eacute;</em> predice. Con d&iacute;gitos de MNIST acierta <strong>1 de 10</strong> por HTTP y <strong>0,1511</strong> sobre las 10 000 im&aacute;genes de prueba. No es el preprocesado: las cuatro convenciones de entrada dan 0,1511, 0,1484, 0,1726 y 0,1614. Tampoco son pesos sin entrenar: la confianza media de la clase ganadora es 0,8832, o sea que se equivoca convencida. El mismo <em>SavedModel</em> alcanza <strong>0,8982</strong> sobre Fashion-MNIST y acierta <strong>10 de 10</strong> prendas por HTTP. El modelo que viaja en el repositorio es el clasificador de prendas de la electiva, no el de d&iacute;gitos que anuncia el c&oacute;digo que lo rodea.</p>
+      <pre class="out">$ python -m flask run --host=0.0.0.0     # el mismo comando de entrypoint.sh
+
+… (recortado: dos avisos de scikit-learn al cargar el pickle)
+
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.2.0.2:5000
+Press CTRL+C to quit
+127.0.0.1 - - [30/Jul/2026 12:08:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jul/2026 12:08:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jul/2026 12:08:41] "GET /leer?dato=hola HTTP/1.1" 200 -
+
+
+1/1 [==============================] - 0s 144ms/step
+127.0.0.1 - - [30/Jul/2026 12:08:41] "POST /predict HTTP/1.1" 200 -
+
+
+1/1 [==============================] - 0s 20ms/step
+127.0.0.1 - - [30/Jul/2026 12:08:41] "POST /predict HTTP/1.1" 200 -
+==========================================================================
+$ python paso02_modelo.py   # imprime las versiones del stack y model.summary()
+
+TensorFlow 2.15.0
+Keras 2.15.0
+
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 26, 26, 64)        640       
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 13, 13, 64)        0         
+ D)                                                              
+                                                                 
+ conv2d_1 (Conv2D)           (None, 11, 11, 32)        18464     
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 5, 5, 32)          0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 800)               0         
+                                                                 
+ dense (Dense)               (None, 10)                8010      
+                                                                 
+=================================================================
+Total params: 27114 (105.91 KB)
+Trainable params: 27114 (105.91 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+==========================================================================
+$ curl -s http://localhost:5000/
+{"message": "Bienvenido a la API de Redes Neuronales"}
+
+
+$ curl -s "http://localhost:5000/leer?dato=hola"
+{"message": "Dato recibido: hola"}
+
+==========================================================================
+# Diez digitos del conjunto de test de MNIST
+
+$ curl -s -F imagen=@digito_0.png http://localhost:5000/predict     # digito real: 0
+{"result": "El n\u00famero es: 5", "total": "El total de predicciones es [[1.41213868e-05 1.37641744e-14 7.89169285e-10 3.63472689e-11\n  2.16094218e-03 9.97824907e-01 3.23503513e-09 8.55478188e-12\n  2.41778775e-08 1.53012087e-12]] "}
+
+
+$ curl -s -F imagen=@digito_1.png http://localhost:5000/predict     # digito real: 1
+{"result": "El n\u00famero es: 0", "total": "El total de predicciones es [[4.0870675e-01 8.8976026e-02 1.4995579e-03 2.1943126e-03 9.6680701e-02\n  3.3366994e-03 5.5556256e-06 1.3668460e-05 7.9510457e-05 3.9850724e-01]] "}
+
+
+$ curl -s -F imagen=@digito_2.png http://localhost:5000/predict     # digito real: 2
+{"result": "El n\u00famero es: 8", "total": "El total de predicciones es [[1.22349913e-04 1.05494925e-10 1.89144375e-05 3.04786772e-06\n  7.62481159e-06 1.75599574e-12 1.15734039e-07 1.62508479e-11\n  9.99847889e-01 1.08146434e-08]] "}
+
+
+$ curl -s -F imagen=@digito_3.png http://localhost:5000/predict     # digito real: 3
+{"result": "El n\u00famero es: 2", "total": "El total de predicciones es [[3.3818073e-05 1.0081890e-14 9.2372704e-01 2.4968566e-04 6.3022092e-02\n  1.7654691e-14 8.6935819e-05 3.2893507e-08 1.2880431e-02 5.1741836e-12]] "}
+
+… (recortado)
+
+$ curl -s -F imagen=@digito_5.png http://localhost:5000/predict     # digito real: 5
+{"result": "El n\u00famero es: 5", "total": "El total de predicciones es [[2.6645497e-05 9.5238468e-16 2.2767463e-09 2.6422873e-08 1.3232000e-13\n  9.9997318e-01 1.5997811e-09 7.7078774e-17 9.2130477e-08 6.6678926e-16]] "}
+
+… (recortado)
+
+==========================================================================
+# Diez prendas del conjunto de test de Fashion-MNIST
+
+$ curl -s -F imagen=@prenda_0.png http://localhost:5000/predict     # clase real: 0 (camiseta)
+{"result": "El n\u00famero es: 0", "total": "El total de predicciones es [[9.9990034e-01 1.2889904e-09 2.1758035e-05 1.4325147e-08 2.8774390e-09\n  3.1899248e-19 7.7845209e-05 2.1449894e-13 7.3075664e-11 5.4892323e-12]] "}
+
+
+$ curl -s -F imagen=@prenda_1.png http://localhost:5000/predict     # clase real: 1 (pantalon)
+{"result": "El n\u00famero es: 1", "total": "El total de predicciones es [[1.1354324e-16 1.0000000e+00 1.4661995e-18 2.1030018e-16 3.6825573e-16\n  1.0282651e-17 7.4845128e-16 2.7729126e-21 9.7241246e-20 1.1471601e-18]] "}
+
+
+$ curl -s -F imagen=@prenda_2.png http://localhost:5000/predict     # clase real: 2 (sueter)
+{"result": "El n\u00famero es: 2", "total": "El total de predicciones es [[2.7511135e-07 3.5593286e-15 9.9999869e-01 8.2090907e-08 5.7047384e-08\n  2.1462300e-22 8.1425230e-07 2.7814775e-15 2.8235892e-14 8.2924234e-14]] "}
+
+… (recortado)
+
+$ curl -s -F imagen=@prenda_6.png http://localhost:5000/predict     # clase real: 6 (camisa)
+{"result": "El n\u00famero es: 6", "total": "El total de predicciones es [[1.2810595e-01 1.5339972e-09 3.3676715e-03 1.5880947e-04 4.1809212e-02\n  5.8082988e-10 8.2655829e-01 1.3207883e-08 1.7044143e-09 1.6535987e-09]] "}
+
+… (recortado)
+
+==========================================================================
+# Diagnostico: por que la API acierta las prendas y falla los digitos
+# Cada cifra sale de evaluar el SavedModel del repositorio sobre los
+# 10 000 ejemplos del conjunto de test correspondiente.
+
+$ python paso06_diagnostico.py     # cuatro convenciones de entrada, sobre MNIST
+x/255      (blanco sobre negro, [0,1])  = lo que produce la API  exactitud 0.1511
+x          (blanco sobre negro, [0,255])                        exactitud 0.1484
+1 - x/255  (negro sobre blanco, [0,1])                          exactitud 0.1726
+255 - x    (negro sobre blanco, [0,255])                        exactitud 0.1614
+
+# Ninguna normalizacion salva el resultado: no es un problema de preprocesado.
+# Los pesos tampoco son aleatorios y la red responde con mucha seguridad:
+#   confianza media del maximo sobre MNIST: 0.8832
+
+$ python paso08_fashion.py     # el mismo modelo, contra Fashion-MNIST
+Fashion-MNIST, conjunto de test
+  imagenes evaluadas: 10000
+  aciertos: 8982
+  exactitud: 0.8982
+
+  exactitud por clase:
+    0 camiseta  0.8560
+    1 pantalon  0.9760
+    2 sueter    0.8540
+    3 vestido   0.8890
+    4 abrigo    0.8870
+    5 sandalia  0.9640
+    6 camisa    0.6560
+    7 zapatilla 0.9780
+    8 bolso     0.9700
+    9 botin     0.9520</pre><img class="shot" src="assets/redes-digitos.png" alt="Diez d&iacute;gitos de MNIST enviados a POST /predict: una sola predicci&oacute;n correcta" /><img class="shot" src="assets/redes-prendas.png" alt="Diez prendas de Fashion-MNIST enviadas a POST /predict: las diez predicciones correctas" />
+    </section>
     <section class="demo" id="gestionEspectro">
       <div class="demo-head">
         <h2>Gestión del espectro <span class="lang">C++</span></h2>

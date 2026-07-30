@@ -1,0 +1,43 @@
+# Diagnostico: por que la API acierta las prendas y falla los digitos
+# Cada cifra sale de evaluar el SavedModel del repositorio sobre los
+# 10 000 ejemplos del conjunto de test correspondiente.
+
+$ python paso06_diagnostico.py     # cuatro convenciones de entrada, sobre MNIST
+x/255      (blanco sobre negro, [0,1])  = lo que produce la API  exactitud 0.1511
+x          (blanco sobre negro, [0,255])                        exactitud 0.1484
+1 - x/255  (negro sobre blanco, [0,1])                          exactitud 0.1726
+255 - x    (negro sobre blanco, [0,255])                        exactitud 0.1614
+
+# Ninguna normalizacion salva el resultado: no es un problema de preprocesado.
+# Los pesos tampoco son aleatorios y la red responde con mucha seguridad:
+#   confianza media del maximo sobre MNIST: 0.8832
+
+$ python paso08_fashion.py     # el mismo modelo, contra Fashion-MNIST
+Fashion-MNIST, conjunto de test
+  imagenes evaluadas: 10000
+  aciertos: 8982
+  exactitud: 0.8982
+
+  exactitud por clase:
+    0 camiseta  0.8560
+    1 pantalon  0.9760
+    2 sueter    0.8540
+    3 vestido   0.8890
+    4 abrigo    0.8870
+    5 sandalia  0.9640
+    6 camisa    0.6560
+    7 zapatilla 0.9780
+    8 bolso     0.9700
+    9 botin     0.9520
+
+PNG RGB generados desde el conjunto de test (indice, clase real):
+  prenda_0.png  <- x_test[19]  camiseta
+  prenda_1.png  <- x_test[2]  pantalon
+  prenda_2.png  <- x_test[1]  sueter
+  prenda_3.png  <- x_test[13]  vestido
+  prenda_4.png  <- x_test[6]  abrigo
+  prenda_5.png  <- x_test[8]  sandalia
+  prenda_6.png  <- x_test[4]  camisa
+  prenda_7.png  <- x_test[9]  zapatilla
+  prenda_8.png  <- x_test[18]  bolso
+  prenda_9.png  <- x_test[0]  botin

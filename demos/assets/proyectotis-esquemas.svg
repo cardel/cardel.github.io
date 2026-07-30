@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 520" width="940" height="520" font-family="Helvetica, Arial, sans-serif">
+<rect width="940" height="520" fill="#ffffff"/>
+<text x="28" y="42" font-size="21" font-weight="700" fill="#161b22">ProyectoTIS: un productor guardado = un esquema PostgreSQL</text>
+<text x="28" y="66" font-size="13" fill="#5b6675">Django 2.0.8 + django-tenants 2.0.0 sobre PostgreSQL 9.6.24. Una sola base de datos (tendencias), un esquema por productor.</text>
+<text x="28" y="106" font-size="11.5" font-weight="700" fill="#5b6675" letter-spacing="0.6">DOMINIO QUE ATIENDE</text>
+<text x="330" y="106" font-size="11.5" font-weight="700" fill="#5b6675" letter-spacing="0.6">ESQUEMA EN POSTGRESQL</text>
+<text x="620" y="106" font-size="11.5" font-weight="700" fill="#5b6675" letter-spacing="0.6">TABLAS</text>
+<text x="742" y="106" font-size="11.5" font-weight="700" fill="#5b6675" letter-spacing="0.6">GESTIONFRUTA_FRUTA</text>
+<line x1="28" y1="114" x2="912" y2="114" stroke="#d3d9e2" stroke-width="1"/>
+<rect x="28" y="128" width="884" height="58" rx="9" fill="#f3f5f9" stroke="#d3d9e2" stroke-width="1.2"/>
+<rect x="28" y="128" width="5" height="58" rx="2.5" fill="#5b6675"/>
+<text x="48" y="153" font-size="14.5" font-weight="600" fill="#161b22" font-family="ui-monospace, Menlo, Consolas, monospace">localhost</text>
+<text x="48" y="172" font-size="11.5" fill="#5b6675">Public</text>
+<text x="300" y="162" font-size="15" fill="#5b6675">&#8594;</text>
+<text x="330" y="153" font-size="14.5" font-weight="600" fill="#161b22" font-family="ui-monospace, Menlo, Consolas, monospace">public</text>
+<text x="330" y="172" font-size="11.5" fill="#5b6675">esquema compartido: productores y dominios</text>
+<text x="620" y="159" font-size="19" font-weight="700" fill="#161b22">14</text>
+<text x="652" y="159" font-size="11.5" fill="#5b6675">tablas</text>
+<text x="742" y="162" font-size="12.5" fill="#5b6675" font-family="ui-monospace, Menlo, Consolas, monospace">la tabla no existe</text>
+<rect x="28" y="202" width="884" height="58" rx="9" fill="#eef6f2" stroke="#d3d9e2" stroke-width="1.2"/>
+<rect x="28" y="202" width="5" height="58" rx="2.5" fill="#0f7b6c"/>
+<text x="48" y="227" font-size="14.5" font-weight="600" fill="#161b22" font-family="ui-monospace, Menlo, Consolas, monospace">esperanza.localhost</text>
+<text x="48" y="246" font-size="11.5" fill="#5b6675">Finca La Esperanza</text>
+<text x="300" y="236" font-size="15" fill="#5b6675">&#8594;</text>
+<text x="330" y="227" font-size="14.5" font-weight="600" fill="#1f6feb" font-family="ui-monospace, Menlo, Consolas, monospace">finca_la_esperanza</text>
+<text x="330" y="246" font-size="11.5" fill="#5b6675">esquema privado del productor</text>
+<text x="620" y="233" font-size="19" font-weight="700" fill="#161b22">13</text>
+<text x="652" y="233" font-size="11.5" fill="#5b6675">tablas</text>
+<text x="742" y="233" font-size="19" font-weight="700" fill="#0f7b6c">2</text>
+<text x="756" y="233" font-size="11.5" fill="#5b6675">filas</text>
+<rect x="28" y="276" width="884" height="58" rx="9" fill="#eef6f2" stroke="#d3d9e2" stroke-width="1.2"/>
+<rect x="28" y="276" width="5" height="58" rx="2.5" fill="#0f7b6c"/>
+<text x="48" y="301" font-size="14.5" font-weight="600" fill="#161b22" font-family="ui-monospace, Menlo, Consolas, monospace">mirador.localhost</text>
+<text x="48" y="320" font-size="11.5" fill="#5b6675">Finca El Mirador</text>
+<text x="300" y="310" font-size="15" fill="#5b6675">&#8594;</text>
+<text x="330" y="301" font-size="14.5" font-weight="600" fill="#1f6feb" font-family="ui-monospace, Menlo, Consolas, monospace">finca_el_mirador</text>
+<text x="330" y="320" font-size="11.5" fill="#5b6675">esquema privado del productor</text>
+<text x="620" y="307" font-size="19" font-weight="700" fill="#161b22">13</text>
+<text x="652" y="307" font-size="11.5" fill="#5b6675">tablas</text>
+<text x="742" y="307" font-size="19" font-weight="700" fill="#0f7b6c">1</text>
+<text x="756" y="307" font-size="11.5" fill="#5b6675">fila</text>
+<rect x="28" y="350" width="884" height="58" rx="9" fill="#eef6f2" stroke="#d3d9e2" stroke-width="1.2"/>
+<rect x="28" y="350" width="5" height="58" rx="2.5" fill="#0f7b6c"/>
+<text x="48" y="375" font-size="14.5" font-weight="600" fill="#161b22" font-family="ui-monospace, Menlo, Consolas, monospace">villacarmen.localhost</text>
+<text x="48" y="394" font-size="11.5" fill="#5b6675">Finca Villa Carmen</text>
+<text x="300" y="384" font-size="15" fill="#5b6675">&#8594;</text>
+<text x="330" y="375" font-size="14.5" font-weight="600" fill="#1f6feb" font-family="ui-monospace, Menlo, Consolas, monospace">finca_villa_carmen</text>
+<text x="330" y="394" font-size="11.5" fill="#5b6675">esquema privado del productor</text>
+<text x="620" y="381" font-size="19" font-weight="700" fill="#161b22">13</text>
+<text x="652" y="381" font-size="11.5" fill="#5b6675">tablas</text>
+<text x="742" y="381" font-size="19" font-weight="700" fill="#5b6675">0</text>
+<text x="756" y="381" font-size="11.5" fill="#5b6675">filas</text>
+<text x="28" y="446" font-size="12.5" fill="#5b6675">El esquema public no tiene ninguna tabla gestionfruta_*: los datos de cada finca solo existen dentro de su esquema.</text>
+<text x="28" y="468" font-size="12.5" fill="#5b6675">El mismo servidor y la misma URL /fruta/ devuelven contenido distinto segun el dominio del Host.</text>
+</svg>
